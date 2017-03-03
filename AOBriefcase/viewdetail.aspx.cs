@@ -32,7 +32,8 @@ namespace AOBriefcase
 
         protected void GetData(Guid myguid)
         {
-            phViewDetail.Visible = true;
+            // Legacy detail view; Uncomment to allow view
+            //phViewDetail.Visible = true;
             codi.GetContractViewGuid(myguid);
             lblCName.Text = codi.Contract_Name.ToString();
             lblCParent.Text = codi.Contract_Parent.ToString();

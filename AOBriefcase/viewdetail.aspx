@@ -11,10 +11,12 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:Label ID="viewGUID" runat="server" Visible="true"></asp:Label>
-        <asp:Label ID="viewGUID2" runat="server" Visible="true"></asp:Label>
+        <h2>Contract Detail Viewer</h2>
+        <asp:Label ID="viewGUID" runat="server" Visible="false"></asp:Label>
+        <asp:Label ID="viewGUID2" runat="server" Visible="false"></asp:Label>
+        <a href="WebForm1.aspx">Back to search page</a>
         <%--Commenting the hardcoded entries here makes the whole thing explode for some reason. Use Visible="false.--%>
-        <asp:PlaceHolder ID="phViewDetail" runat="server" Visible="true">
+        <asp:PlaceHolder ID="phViewDetail" runat="server" Visible="false">
             <dl>
                 <dt style="padding-left: 50px;">Contract Details<br /><br /></dt>                           
                 <dt>Contract Name:<br /></dt>
@@ -128,7 +130,7 @@
                 <asp:BoundField DataField="SVC_Injectibles" HeaderText="SVC_Injectibles" SortExpression="SVC_Injectibles" />
                 <asp:BoundField DataField="Auth_ProviderPortal" HeaderText="Auth_ProviderPortal" SortExpression="Auth_ProviderPortal" />
                 <asp:BoundField DataField="Contract_PDF" HeaderText="Contract_PDF" SortExpression="Contract_PDF" />
-                <asp:BoundField DataField="GUID" HeaderText="GUID" SortExpression="GUID" />
+                <%--<asp:BoundField DataField="GUID" HeaderText="GUID" SortExpression="GUID" />--%>
             </Fields>
         </asp:DetailsView>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DemographicsConnectionString %>" SelectCommand="SELECT * FROM [Contract_Demographics] WHERE ([GUID] = guid)">
