@@ -131,9 +131,9 @@
                 <asp:BoundField DataField="GUID" HeaderText="GUID" SortExpression="GUID" />
             </Fields>
         </asp:DetailsView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DemographicsConnectionString %>" SelectCommand="SELECT * FROM [Contract_Demographics] WHERE ([GUID] = @Guid)">
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DemographicsConnectionString %>" SelectCommand="SELECT * FROM [Contract_Demographics] WHERE ([GUID] = guid)">
             <SelectParameters>
-                <asp:QueryStringParameter Name="GUID" QueryStringField="GUID" Type="Object" />
+                <asp:QueryStringParameter Name="GUID" QueryStringField="guid" Type="Object" />
             </SelectParameters>
         </asp:SqlDataSource>
     </form>
