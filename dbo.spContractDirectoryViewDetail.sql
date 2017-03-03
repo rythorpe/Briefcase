@@ -1,0 +1,17 @@
+﻿USE [E:\AO\BRIEFCASE\AOBRIEFCASE\AOBRIEFCASE\APP_DATA\DATABASE1.MDF]
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+CREATE PROCEDURE spContractDirectoryViewDetail
+	@Alias1 varchar(40)
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	SELECT AOID + '.' + Amend_Count + ' - ' + Contract_Name as AOCode, GUID
+	FROM Contract_Demographics
+	WHERE Contract_Alias1 LIKE @Alias1 + '%'
+END
+GO
