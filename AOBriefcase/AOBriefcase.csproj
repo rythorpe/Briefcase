@@ -94,6 +94,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin.aspx" />
     <Content Include="DBEdit.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -120,6 +121,13 @@
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ContractDirectory.cs" />
     <Compile Include="DBEdit.aspx.cs">
       <DependentUpon>DBEdit.aspx</DependentUpon>

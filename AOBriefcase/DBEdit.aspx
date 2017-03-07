@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DBEdit.aspx.cs" Inherits="AOBriefcase.DBEdit" %>
+﻿<%@ Page Language="C#" UnobtrusiveValidationMode="none" AutoEventWireup="true" CodeBehind="DBEdit.aspx.cs" Inherits="AOBriefcase.DBEdit" %>
 
 <!DOCTYPE html>
 
@@ -8,10 +8,18 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <asp:Label ID="Label1" ForeColor="Red" runat="server" Visible="false"/>
+        <a href="WebForm1.aspx">Back to search page</a>
+        <br />
+        <br />
+        Welcome
+        <asp:LoginName ID="LoginName2" runat="server" Font-Bold ="true" />                        
+        <asp:LoginStatus ID="LoginStatus2" runat="server" />        
         <h2>You have entered the database editing module. Please be very careful here.</h2>
     <div>
-        <a href="WebForm1.aspx">Back to search page</a>
-        <%--<p>viewIndex</p>--%>
+        <%--Welcome
+        <asp:LoginName ID="LoginName1" runat="server" Font-Bold ="true" />                        
+        <asp:LoginStatus ID="LoginStatus1" runat="server" />        --%>
     </div>
         <asp:Label ID="StatusLabel1" ForeColor="Red" runat="server" Visible="false"/>
         <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="ContractID" DataSourceID="SqlDataSource1" Height="50px" Width="125px" Visible="False">
