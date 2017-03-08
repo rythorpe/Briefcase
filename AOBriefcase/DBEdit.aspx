@@ -22,7 +22,7 @@
         <asp:LoginStatus ID="LoginStatus1" runat="server" />        --%>
     </div>
         <asp:Label ID="StatusLabel1" ForeColor="Red" runat="server" Visible="false"/>
-        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="ContractID" DataSourceID="SqlDataSource1" Height="50px" Width="125px" Visible="False">
+        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="ContractID" DataSourceID="SqlDataSource1" Height="50px" Width="400px" Visible="False" RowStyle-Wrap="false">
             <Fields>
                 <asp:BoundField DataField="ContractID" HeaderText="ContractID" InsertVisible="False" ReadOnly="True" SortExpression="ContractID" />
                 <asp:BoundField DataField="AOID" HeaderText="AOID" SortExpression="AOID" />
@@ -57,11 +57,12 @@
                 <asp:CommandField ShowInsertButton="True" ShowDeleteButton="True" ShowEditButton="True" />
             </Fields>
         </asp:DetailsView>
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="ContractID" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="ChangeSelectedIndex">
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="ContractID" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="ChangeSelectedIndex" RowStyle-Wrap="false" HeaderStyle-Wrap="false">
             <Columns>
                 <asp:CommandField ShowSelectButton="True" />
                 <asp:BoundField DataField="ContractID" HeaderText="ContractID" SortExpression="ContractID" InsertVisible="False" ReadOnly="True"></asp:BoundField>
                 <asp:BoundField DataField="AOID" HeaderText="AOID" SortExpression="AOID" />
+                    <%--<ItemStyle Width="10px"></ItemStyle>--%>
                 <asp:BoundField DataField="Amend_Count" HeaderText="Amend_Count" SortExpression="Amend_Count" />
                 <asp:BoundField DataField="Amend_Comment" HeaderText="Amend_Comment" SortExpression="Amend_Comment" />
                 <asp:BoundField DataField="Contract_Name" HeaderText="Contract_Name" SortExpression="Contract_Name" />

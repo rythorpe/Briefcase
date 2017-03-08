@@ -1,0 +1,69 @@
+﻿body {
+    
+}
+
+#Wrapper{    
+    width:800px;
+    margin-top:5px;
+    border:1px solid #D4D4D4;
+    border-width:1px 1px 1px 1px;
+    padding:1px 18px 20px;
+    color:#2A2A2A;
+    position:relative;    
+    padding-bottom:30px;
+}
+
+h1{
+    font-size:1.4em;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#2b4b83;
+}
+
+p{
+    font-family:Arial, Helvetica, sans-serif;
+    display:block;
+    font:.8em;
+}
+
+.FancyButtonOrange:hover{
+    color:#000000;
+}
+.FancyButtonBlue:hover{
+    color:#000000;
+}
+
+.FancyButtonOrange{
+    background: transparent url(/Images/buttonOrange.png) no-repeat scroll top right;
+    display: block;
+    float:right;
+    height:28px;
+    margin-right:6px;    
+    text-decoration:none;
+    text-align:center;
+    color:#fff;
+    font-family:Arial,Helventica,sans-serif;
+    font-size:.8em;
+    font-weight:bold;
+    border-radius:8px;
+    border:none;/*
+    width:80px;
+    height:25px;*/
+}
+.FancyButtonBlue{
+    background:transparent url(/Images/buttonBlue.png) no-repeat scroll top right;
+    display:block;
+    float:right;
+    height:28px;
+    margin-right:10px;    
+    text-decoration:none;
+    text-align:center;
+    color:#fff;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:.7em;
+    font-weight:bold;
+    border-radius:8px;
+    border:none;
+    /*border:none;
+    width:80px;
+    height:25px;*/
+}

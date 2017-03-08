@@ -12,9 +12,16 @@
 <body>
     <form id="form1" runat="server">
         <h2>Contract Detail Viewer</h2>
+        | <a href="PlaceholderPage.aspx">Provider Credentialing View</a> |
+        | <a href="PlaceholderPage.aspx">Authorization Requirements View</a> |
+        | <a href="PlaceholderPage.aspx">Business Office Details View</a> |
+        <br />
+        <br />
         <asp:Label ID="viewGUID" runat="server" Visible="false"></asp:Label>
         <asp:Label ID="viewGUID2" runat="server" Visible="false"></asp:Label>
         <a href="WebForm1.aspx">Back to search page</a>
+        <p>Todo: (low) Clean up header names. Format/clean cell data.</p>
+        <p>Todo: (low) Figure out how to remove legacy view.</p>
         <%--Commenting the hardcoded entries here makes the whole thing explode for some reason. Use Visible="false.--%>
         <asp:PlaceHolder ID="phViewDetail" runat="server" Visible="false">
             <dl>
