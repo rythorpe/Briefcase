@@ -21,7 +21,7 @@ namespace AOBriefcase
 
         protected void btnNoAccept_Click(object sender, EventArgs e)
         {
-            btnNoAccept.PostBackUrl = "www.arrowheadortho.com/";
+            btnNoAccept.PostBackUrl = "http://www.arrowheadortho.com/";
         }
     }
 }

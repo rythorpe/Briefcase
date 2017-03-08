@@ -25,7 +25,7 @@ namespace AOBriefcase
         {
             if (IsValid)
             {
-                List<ContractDirectory> contracts = codi.GetContractView(txtName.Text);
+                List<ContractDirectory> contracts = codi.GetContractViewLatest(txtName.Text); // Can change type class of search results here
                 TogglePHVisibility();
                 rpContractSearchView.DataSource = contracts;
                 rpContractSearchView.DataBind();

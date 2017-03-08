@@ -42,7 +42,7 @@ namespace AOBriefcase
         public string SVC_Injectibles { get; set; }
         public string Contract_PDF { get; set; }
 
-        //Method for handling search box queries
+        //Method for handling search box queries (working Standard Search)
         public List<ContractDirectory>GetContractView(string aliaszero)
         {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DemographicsConnectionString"].ConnectionString);
@@ -65,6 +65,40 @@ namespace AOBriefcase
                 }
             }
             catch(Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                cmd.Dispose();
+                conn.Close();
+            }
+            return contracts;
+        }
+
+        // Revised Standard Search Method. Should return only the latest amendment of a contract
+        public List<ContractDirectory> GetContractViewLatest(string aliaszero)
+        {
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DemographicsConnectionString"].ConnectionString);
+            SqlCommand cmd = new SqlCommand("dbo.spContractDirectoryViewDetail7", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlParameter parameterCName = new SqlParameter("@Alias1", SqlDbType.VarChar, 40);
+            parameterCName.Value = aliaszero;
+            cmd.Parameters.Add(parameterCName);
+            List<ContractDirectory> contracts = new List<ContractDirectory>();
+            try
+            {
+                conn.Open();
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    ContractDirectory codi = new ContractDirectory();
+                    codi.AOCode = rdr["AOCode"].ToString();
+                    codi.GUID = new Guid(rdr["GUID"].ToString());
+                    contracts.Add(codi);
+                }
+            }
+            catch (Exception ex)
             {
                 throw new Exception(ex.ToString());
             }
