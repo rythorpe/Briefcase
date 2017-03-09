@@ -29,7 +29,21 @@ namespace AOBriefcase
                 TogglePHVisibility();
                 rpContractSearchView.DataSource = contracts;
                 rpContractSearchView.DataBind();
+                // Test for failed search
+                if (contracts.Count == 0)
+                {
+                    FailedSearch();
+                }
             }
+        }
+
+        // View all button executes stored procedure for pulling most recent amendments for all contracts
+        protected void btnViewall_Click(object s,EventArgs e)
+        {
+            List<ContractDirectory> contracts = codi.GetContractViewAll();//txtName.Text);
+            TogglePHVisibility();
+            rpContractSearchView.DataSource = contracts;
+            rpContractSearchView.DataBind();
         }
 
         protected void TogglePHVisibility()

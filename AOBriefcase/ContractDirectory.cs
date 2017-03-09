@@ -110,6 +110,40 @@ namespace AOBriefcase
             return contracts;
         }
 
+        // Revised Standard Search Method. Should return latest amendments for all contracts
+        public List<ContractDirectory> GetContractViewAll()//string aliaszero)
+        {
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DemographicsConnectionString"].ConnectionString);
+            SqlCommand cmd = new SqlCommand("dbo.spContractDirectoryViewDetailAll", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            //SqlParameter parameterCName = new SqlParameter("@Alias1", SqlDbType.VarChar, 40);
+            //parameterCName.Value = aliaszero;
+            //cmd.Parameters.Add(parameterCName);
+            List<ContractDirectory> contracts = new List<ContractDirectory>();
+            try
+            {
+                conn.Open();
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    ContractDirectory codi = new ContractDirectory();
+                    codi.AOCode = rdr["AOCode"].ToString();
+                    codi.GUID = new Guid(rdr["GUID"].ToString());
+                    contracts.Add(codi);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                cmd.Dispose();
+                conn.Close();
+            }
+            return contracts;
+        }
+
         // Method for pulling contract based on reference GUID
         public void GetContractViewGuid(Guid guid)
         {

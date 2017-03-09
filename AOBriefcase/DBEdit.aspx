@@ -4,7 +4,9 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Admin Page</title>
+    <link rel="shortcut icon" type="image/x-icon" href="~/Images/favicon.ico" runat="server"/>
+    <link rel="icon" type="image/ico" href="~/Images/favicon.ico" runat="server"/>
 </head>
 <body>
     <form id="form1" runat="server">

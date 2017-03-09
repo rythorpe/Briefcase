@@ -100,6 +100,7 @@
     <Content Include="disclaimer.css" />
     <Content Include="Images\buttonBlue.png" />
     <Content Include="Images\buttonOrange.png" />
+    <Content Include="Images\favicon.ico" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

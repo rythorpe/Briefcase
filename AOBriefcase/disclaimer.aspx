@@ -4,7 +4,9 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Arrowhead Orthopaedics Internal Resources Disclaimer</title>
+    <link rel="shortcut icon" type="image/x-icon" href="~/Images/favicon.ico" runat="server"/>
+    <link rel="icon" type="image/ico" href="~/Images/favicon.ico" runat="server"/>
 <style type="text/css" media="screen">
 @import "disclaimer.css";
 </style>
