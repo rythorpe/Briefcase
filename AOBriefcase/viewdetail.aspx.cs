@@ -57,5 +57,25 @@ namespace AOBriefcase
             lblDrug.Text = codi.SVC_Injectibles.ToString();
             lblPDF.Text = codi.Contract_PDF.ToString();
         }
+
+        // viewdetail page view submenu button methods
+        protected void btnSub1_Click(object sender, EventArgs e)
+        {
+            Guid btnViewGuid = Guid.Empty;
+            Guid.TryParse(Request.QueryString["GUID"], out btnViewGuid);
+            Response.Redirect("~/viewdetail.aspx?guid=" + btnViewGuid);
+        }
+        protected void btnSub2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/PlaceholderPage.aspx");
+        }
+        protected void btnSub3_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/PlaceholderPage.aspx");
+        }
+        protected void btnSub4_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/PlaceholderPage.aspx");
+        }
     }
 }

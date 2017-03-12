@@ -2,6 +2,10 @@
     
 }
 
+.AOlogo{
+    padding-bottom:20px;
+}
+
 #Wrapper{    
     width:800px;
     margin-top:5px;
@@ -27,9 +31,11 @@ p{
 
 .FancyButtonOrange:hover{
     color:#000000;
+    cursor:pointer;
 }
 .FancyButtonBlue:hover{
     color:#000000;
+    cursor:pointer;
 }
 
 .FancyButtonOrange{

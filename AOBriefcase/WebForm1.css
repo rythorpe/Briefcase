@@ -16,3 +16,32 @@ p{
 #results{
     font-family:Arial, Helvetica, sans-serif;    
 }
+
+#NavigationBar ul{        
+}
+
+#NavigationBar ul li{
+    border:1px solid white;
+    border-radius:5px;
+    background-color:#fed426;
+    text-decoration:none;
+    font-family:Arial, Helvetica, sans-serif;
+    text-align:center;    
+    height: auto;
+    padding:10px 12px;
+    margin:3px;
+    background:linear-gradient(to bottom,#fbecb5 0%,#fed426 100%);
+    /*background-image:-webkit-linear-gradient(#FBECB5,#FED426);*/
+    background-repeat: no-repeat;    
+}
+
+#NavigationBar ul li a{
+    color:black;
+    font-weight:bold;
+}
+
+#NavigationBar ul li a:hover{
+    /*font-weight:bold;*/
+    text-decoration:underline;
+    cursor:pointer;
+}

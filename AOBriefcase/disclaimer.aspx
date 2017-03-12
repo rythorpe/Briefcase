@@ -13,6 +13,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <asp:Image ID="AOLogo" runat="server" ImageURL="~/Images/AOlogo.png"/>        
     <div id="Wrapper">
         <h1>Disclaimer Notice for Employee Use of Internal Resources</h1>
         <p>

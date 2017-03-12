@@ -16,12 +16,14 @@ namespace AOBriefcase
 
         protected void btnAccept_Click(object sender, EventArgs e)
         {
-            btnAccept.PostBackUrl = "~/Webform1.aspx";
+            //btnAccept.PostBackUrl = "~/Webform1.aspx";
+            Response.Redirect("~/Webform1.aspx");                        
         }
 
         protected void btnNoAccept_Click(object sender, EventArgs e)
         {
-            btnNoAccept.PostBackUrl = "http://www.arrowheadortho.com/";
+            //btnNoAccept.PostBackUrl = "http://www.arrowheadortho.com/";
+            Response.Redirect("http://www.arrowheadortho.com/");
         }
     }
 }

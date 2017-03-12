@@ -13,14 +13,27 @@
 </style>
 </head>
 <body>
-    <form id="form1" runat="server">    
+    <form id="form1" runat="server">
+        <asp:Image ID="AOLogo" runat="server" ImageURL="~/Images/AOlogo.png"/>
+        
+        <div id="NavigationBar">            
+        <asp:Menu ID="Navi" runat="server" EnableViewState="false" Orientation="Horizontal">
+            <Items>
+                <asp:MenuItem NavigateUrl="~/disclaimer.aspx" Text="Home" />
+                <asp:MenuItem NavigateUrl="~/WebForm1.aspx" Text="Search for a Contract" />
+                <asp:MenuItem NavigateUrl="~/DBEdit.aspx" Text="Edit Contracts" />
+            </Items>
+        </asp:Menu>
+        </div>
+        <div id="titleText">
         <h2>Welcome to the contract reference database. <br />
             Please search for a contract to view more details.</h2>
-        <p>
+        </div>
+        <%--<p>
             | Search for a contract || 
             <a href="DBEdit.aspx">Edit Contracts</a>
-        </p>
-        <div id="results">
+        </p>--%>
+        <div id="results">            
             <asp:TextBox ID="txtName" runat="server" />
             <asp:Button ID="btnSearch" runat="server" OnClick="btnSearch_Click" Text="Search" ValidationGroup="Search"/>            
             <asp:Button ID="btnViewall" runat="server" OnClick="btnViewall_Click" Text="View All" ValidationGroup="OmniView"/>
