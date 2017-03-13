@@ -105,6 +105,8 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="viewauthreq.css" />
+    <Content Include="viewcredentialing.css" />
     <Content Include="WebForm1.css" />
     <None Include="Properties\PublishProfiles\Beta.pubxml" />
     <None Include="Web.Debug.config">
