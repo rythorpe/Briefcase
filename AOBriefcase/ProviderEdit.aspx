@@ -1,18 +1,39 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProviderEdit.aspx.cs" Inherits="AOBriefcase.ProviderEdit" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProviderEdit.aspx.cs" Inherits="AOBriefcase.ProviderEdit" MaintainScrollPositionOnPostBack = "true" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Provider Configuration</title>
+    <link rel="shortcut icon" type="image/x-icon" href="~/Images/favicon.ico" runat="server" />
+    <link rel="icon" type="image/ico" href="~/Images/favicon.ico" runat="server" />
+<style type="text/css" media="screen">
+    @import "ProviderEdit.css";
+</style>
 </head>
 <body>
     <form id="form1" runat="server">
+        <asp:Image ID="AOLogo" runat="server" ImageURL="~/Images/AOlogo.png"/>        
+        <h2>Provider Configuration</h2>
+        <p>Add or edit providers in this screen. Always leave the ProviderListID column blank when entering a new provider.</p>
+        <a href="DBEdit.aspx">Back to Contract Configuration Page</a>
     <div>    
     </div>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ProviderListID" DataSourceID="ProviderDB">
+        <asp:GridView 
+            ID="GridView1" 
+            runat="server" 
+            AutoGenerateColumns="False" 
+            DataKeyNames="ProviderListID" 
+            DataSourceID="ProviderDB" 
+            Gridlines="None"
+            CssClass="viewer" 
+            HeaderStyle-CssClass="detailheader" 
+            FieldHeaderStyle-CssClass="detailfieldheader" 
+            AlternatingRowStyle-CssClass="alternatingRow"
+             
+            >
             <Columns>
-                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowInsertButton="true"/>
+                <asp:CommandField ShowDeleteButton="false" ShowEditButton="True" ShowInsertButton="true"/>
                 <asp:BoundField DataField="ProviderListID" HeaderText="ProviderListID" InsertVisible="False" ReadOnly="True" SortExpression="ProviderListID" />
                 <asp:BoundField DataField="Provider_FullName" HeaderText="Provider_FullName" SortExpression="Provider_FullName" />
                 <asp:BoundField DataField="Provider_PLUS" HeaderText="Provider_PLUS" SortExpression="Provider_PLUS" />

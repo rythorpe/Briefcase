@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" UnobtrusiveValidationMode="none" AutoEventWireup="true" CodeBehind="DBEdit.aspx.cs" Inherits="AOBriefcase.DBEdit" %>
+﻿<%@ Page Language="C#" UnobtrusiveValidationMode="none" AutoEventWireup="true" CodeBehind="DBEdit.aspx.cs" Inherits="AOBriefcase.DBEdit" MaintainScrollPositionOnPostBack = "true" %>
 
 <!DOCTYPE html>
 
