@@ -14,10 +14,8 @@
         <a href="WebForm1.aspx">Back to search page</a>
     <div>
         <p>Page is under construction. Test data pull below.</p>
-        <p>Todo: (high) Connectionstring for Credentialing tables</p>
-        <p>Todo: (high) Connectionstring for AuthReq tables</p>
+        <p>Todo: (high) Connectionstring for Credentialing tables</p>        
         <p>Todo: (?) Framework for billing users</p>
-
     </div>
     </form>
 </body>

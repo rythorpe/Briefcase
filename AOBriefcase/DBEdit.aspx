@@ -18,13 +18,26 @@
         <asp:LoginName ID="LoginName2" runat="server" Font-Bold ="true" />                        
         <asp:LoginStatus ID="LoginStatus2" runat="server" />        
         <h2>You have entered the database editing module. Please be very careful here.</h2>
+        <br /><br />
+        <a href="ProviderEdit.aspx">Configure Providers</a>
+        <br /><br />
     <div>
         <%--Welcome
         <asp:LoginName ID="LoginName1" runat="server" Font-Bold ="true" />                        
         <asp:LoginStatus ID="LoginStatus1" runat="server" />        --%>
     </div>
         <asp:Label ID="StatusLabel1" ForeColor="Red" runat="server" Visible="false"/>
-        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="ContractID" DataSourceID="SqlDataSource1" Height="50px" Width="400px" Visible="False" RowStyle-Wrap="false">
+        <asp:DetailsView 
+            ID="DetailsView1" 
+            runat="server" 
+            AutoGenerateRows="False" 
+            DataKeyNames="ContractID" 
+            DataSourceID="SqlDataSource1" 
+            Height="50px" 
+            Width="400px" 
+            Visible="False" 
+            RowStyle-Wrap="false"
+            >
             <Fields>
                 <asp:BoundField DataField="ContractID" HeaderText="ContractID" InsertVisible="False" ReadOnly="True" SortExpression="ContractID" />
                 <asp:BoundField DataField="AOID" HeaderText="AOID" SortExpression="AOID" />
@@ -59,7 +72,17 @@
                 <asp:CommandField ShowInsertButton="True" ShowDeleteButton="True" ShowEditButton="True" />
             </Fields>
         </asp:DetailsView>
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="ContractID" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="ChangeSelectedIndex" RowStyle-Wrap="false" HeaderStyle-Wrap="false">
+        <asp:GridView 
+            ID="GridView1" 
+            runat="server" 
+            AllowPaging="True" 
+            AutoGenerateColumns="False" 
+            DataKeyNames="ContractID" 
+            DataSourceID="SqlDataSource1" 
+            OnSelectedIndexChanged="ChangeSelectedIndex" 
+            RowStyle-Wrap="false" 
+            HeaderStyle-Wrap="false"
+            >
             <Columns>
                 <asp:CommandField ShowSelectButton="True" />
                 <asp:BoundField DataField="ContractID" HeaderText="ContractID" SortExpression="ContractID" InsertVisible="False" ReadOnly="True"></asp:BoundField>

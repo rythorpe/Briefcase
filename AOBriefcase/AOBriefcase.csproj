@@ -105,6 +105,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="ProviderEdit.aspx" />
     <Content Include="viewauthreq.css" />
     <Content Include="viewcredentialing.css" />
     <Content Include="WebForm1.css" />
@@ -162,6 +163,13 @@
       <DependentUpon>PlaceholderPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProviderEdit.aspx.cs">
+      <DependentUpon>ProviderEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProviderEdit.aspx.designer.cs">
+      <DependentUpon>ProviderEdit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="viewauthreq.aspx.cs">
       <DependentUpon>viewauthreq.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
