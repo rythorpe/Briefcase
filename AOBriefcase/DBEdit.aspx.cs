@@ -41,6 +41,25 @@ namespace AOBriefcase
             DetailsView1.PageIndex = DetailIndex;
             StatusLabel1.Text = "Detailed View enabled.";
             StatusLabel1.Visible = true;
+            btnEditCred.Visible = true;
+        }
+
+        // Button to change contract editing interface to provider credentialing
+        protected void btnEditCred_Click(object sender, EventArgs e)
+        {
+            btnEditCred.Visible = false;
+            DetailsView1.Visible = false;
+            GridView2.Visible = true;
+            btnEditCont.Visible = true;
+        }
+
+        // Button to return back to contract detail editing from credentialing
+        protected void btnEditCont_Click(object sender, EventArgs e)
+        {
+            btnEditCred.Visible = true;
+            DetailsView1.Visible = true;
+            btnEditCont.Visible = false;
+            GridView2.Visible = false;
         }
 
         // Debug trigger. Not currently used.

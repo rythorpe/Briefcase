@@ -30,6 +30,9 @@
         <asp:LoginStatus ID="LoginStatus1" runat="server" />        --%>
     </div>
         <asp:Label ID="StatusLabel1" ForeColor="Red" runat="server" Visible="false"/>
+        <br />
+        <asp:Button ID="btnEditCred" runat="server" class="btnDBSubMenu" Text="Edit this contract's Providers" color="#fff" OnClick="btnEditCred_Click" Visible="false"/>
+        <asp:Button ID="btnEditCont" runat="server" class="btnDBSubMenu" Text="Edit this contract's Details" color="#fff" OnClick="btnEditCont_Click" Visible="false" />
         <asp:DetailsView 
             ID="DetailsView1" 
             runat="server" 
@@ -40,7 +43,7 @@
             Width="400px" 
             Visible="False" 
             RowStyle-Wrap="false"
-            HeaderText="[Contract Name Here]"
+            HeaderText="[Contract Name Here]: Edit Interface"
             Gridlines="None"
             CssClass="viewer"
             HeaderStyle-CssClass="detailheader"
@@ -88,19 +91,40 @@
             AutoGenerateRows="False" 
             DataSourceID="SqlDataSource2" 
             Height="50px" 
-            Width="125px" 
+            Width="150px" 
             AutoGenerateColumns="False" 
-            DataKeyNames="ProviderID,ContractID"
+            DataKeyNames="ProviderID,ContractID"            
+            Gridlines="None" 
+            HeaderStyle-BackColor="#2b4b83"
+            HeaderStyle-ForeColor="white"            
+            CssClass="viewer"
+            HeaderStyle-CssClass="detailheader"
+            FieldHeaderStyle-CssClass="detailfieldheader"
+            AlternatingRowStyle-CssClass="alternatingRow"
+            Visible="false"
             >
             <Columns>
-                <asp:BoundField DataField="ProviderID" HeaderText="ProviderID" SortExpression="ProviderID" ReadOnly="True" />
-                <asp:BoundField DataField="Provider_FullName" HeaderText="Provider_FullName" SortExpression="Provider_FullName" />
-                <asp:BoundField DataField="ContractID" HeaderText="ContractID" SortExpression="ContractID" ReadOnly="True" />
+                <asp:CommandField ShowEditButton="True" ButtonType="Button" />
+                <asp:BoundField DataField="ProviderID" HeaderText="ProviderID" SortExpression="ProviderID" ReadOnly="True" Visible="false"/>
+                <asp:BoundField DataField="Provider_FullName" HeaderText="Provider_FullName" SortExpression="Provider_FullName" ReadOnly="true"/>
+                <asp:BoundField DataField="ContractID" HeaderText="ContractID" SortExpression="ContractID" ReadOnly="True" Visible="false"/>
                 <asp:BoundField DataField="Credentialing_Status" HeaderText="Credentialing_Status" SortExpression="Credentialing_Status" />
                 <asp:BoundField DataField="Credentialing_EffectiveDate" HeaderText="Credentialing_EffectiveDate" SortExpression="Credentialing_EffectiveDate" />                
             </Columns>
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT ProviderContract_junction.ProviderID, ProviderContract_junction.ContractID, ProviderContract_junction.Credentialing_Status, ProviderContract_junction.Credentialing_EffectiveDate, ProviderList.Provider_FullName FROM ProviderContract_junction INNER JOIN ProviderList ON ProviderContract_junction.ProviderID = ProviderList.ProviderListID WHERE (ProviderContract_junction.ContractID = @ContractID) ORDER BY ProviderContract_junction.ProviderID DESC">
+        <asp:SqlDataSource 
+            ID="SqlDataSource2" 
+            runat="server" 
+            ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
+            SelectCommand="SELECT ProviderContract_junction.ProviderID, ProviderContract_junction.ContractID, ProviderContract_junction.Credentialing_Status, ProviderContract_junction.Credentialing_EffectiveDate, ProviderList.Provider_FullName FROM ProviderContract_junction INNER JOIN ProviderList ON ProviderContract_junction.ProviderID = ProviderList.ProviderListID WHERE (ProviderContract_junction.ContractID = @ContractID) ORDER BY ProviderContract_junction.ProviderID DESC"
+            UpdateCommand="UPDATE [ProviderContract_junction] SET [Credentialing_Status] = @Credentialing_Status, [Credentialing_EffectiveDate] = @Credentialing_EffectiveDate WHERE [ContractID] = @ContractID AND [ProviderID] = @ProviderID"
+            >
+            <UpdateParameters>
+                <asp:Parameter Name="Credentialing_Status" Type="String" />
+    	        <asp:Parameter DbType="Date" Name="Credentialing_EffectiveDate" />
+	            <asp:Parameter Name="ContractID" Type="Int32" />
+	            <asp:Parameter Name="ProviderID" Type="Int32" />
+            </UpdateParameters>
             <SelectParameters>
                 <asp:ControlParameter ControlID="GridView1" Name="ContractID" PropertyName="SelectedValue" Type="Int32" />
             </SelectParameters>
@@ -112,12 +136,14 @@
             AutoGenerateColumns="False" 
             DataKeyNames="ContractID" 
             DataSourceID="SqlDataSource1" 
-            OnSelectedIndexChanged="ChangeSelectedIndex" 
+            OnSelectedIndexChanged="ChangeSelectedIndex"
+            HeaderStyle-Backcolor="#2b4b83"
+            HeaderStyle-Forecolor="White" 
             RowStyle-Wrap="false" 
             HeaderStyle-Wrap="false"
             >
             <Columns>
-                <asp:CommandField ShowSelectButton="True" />
+                <asp:CommandField ShowSelectButton="True" ButtonType="Button"/>
                 <asp:BoundField DataField="ContractID" HeaderText="ContractID" SortExpression="ContractID" InsertVisible="False" ReadOnly="True"></asp:BoundField>
                 <asp:BoundField DataField="AOID" HeaderText="AOID" SortExpression="AOID" />
                     <%--<ItemStyle Width="10px"></ItemStyle>--%>
