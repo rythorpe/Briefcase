@@ -7,6 +7,9 @@
     <title>Admin Page</title>
     <link rel="shortcut icon" type="image/x-icon" href="~/Images/favicon.ico" runat="server"/>
     <link rel="icon" type="image/ico" href="~/Images/favicon.ico" runat="server"/>
+<style type="text/css" media="screen">
+    @import "viewdetail.css";
+</style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -17,7 +20,7 @@
         Welcome
         <asp:LoginName ID="LoginName2" runat="server" Font-Bold ="true" />                        
         <asp:LoginStatus ID="LoginStatus2" runat="server" />        
-        <h2>You have entered the database editing module. Please be very careful here.</h2>
+        <h2>You have entered the contract configuration module. Please be very careful here.</h2>
         <br /><br />
         <a href="ProviderEdit.aspx">Configure Providers</a>
         <br /><br />
@@ -37,8 +40,15 @@
             Width="400px" 
             Visible="False" 
             RowStyle-Wrap="false"
+            HeaderText="[Contract Name Here]"
+            Gridlines="None"
+            CssClass="viewer"
+            HeaderStyle-CssClass="detailheader"
+            FieldHeaderStyle-CssClass="detailfieldheader"
+            AlternatingRowStyle-CssClass="alternatingRow"
             >
             <Fields>
+                <asp:CommandField ShowInsertButton="True" ShowDeleteButton="True" ShowEditButton="True" ButtonType="Button"/>
                 <asp:BoundField DataField="ContractID" HeaderText="ContractID" InsertVisible="False" ReadOnly="True" SortExpression="ContractID" />
                 <asp:BoundField DataField="AOID" HeaderText="AOID" SortExpression="AOID" />
                 <asp:BoundField DataField="Amend_Count" HeaderText="Amend_Count" SortExpression="Amend_Count" />
@@ -68,10 +78,33 @@
                 <asp:CheckBoxField DataField="SVC_PT" HeaderText="SVC_PT" SortExpression="SVC_PT" />
                 <asp:CheckBoxField DataField="SVC_PainMgmt" HeaderText="SVC_PainMgmt" SortExpression="SVC_PainMgmt" />
                 <asp:CheckBoxField DataField="SVC_Podiatry" HeaderText="SVC_Podiatry" SortExpression="SVC_Podiatry" />
-                <asp:CheckBoxField DataField="SVC_DME" HeaderText="SVC_DME" SortExpression="SVC_DME" />
-                <asp:CommandField ShowInsertButton="True" ShowDeleteButton="True" ShowEditButton="True" />
+                <asp:CheckBoxField DataField="SVC_DME" HeaderText="SVC_DME" SortExpression="SVC_DME" />                
             </Fields>
         </asp:DetailsView>
+
+        <asp:GridView 
+            ID="GridView2" 
+            runat="server" 
+            AutoGenerateRows="False" 
+            DataSourceID="SqlDataSource2" 
+            Height="50px" 
+            Width="125px" 
+            AutoGenerateColumns="False" 
+            DataKeyNames="ProviderID,ContractID"
+            >
+            <Columns>
+                <asp:BoundField DataField="ProviderID" HeaderText="ProviderID" SortExpression="ProviderID" ReadOnly="True" />
+                <asp:BoundField DataField="Provider_FullName" HeaderText="Provider_FullName" SortExpression="Provider_FullName" />
+                <asp:BoundField DataField="ContractID" HeaderText="ContractID" SortExpression="ContractID" ReadOnly="True" />
+                <asp:BoundField DataField="Credentialing_Status" HeaderText="Credentialing_Status" SortExpression="Credentialing_Status" />
+                <asp:BoundField DataField="Credentialing_EffectiveDate" HeaderText="Credentialing_EffectiveDate" SortExpression="Credentialing_EffectiveDate" />                
+            </Columns>
+        </asp:GridView>
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT ProviderContract_junction.ProviderID, ProviderContract_junction.ContractID, ProviderContract_junction.Credentialing_Status, ProviderContract_junction.Credentialing_EffectiveDate, ProviderList.Provider_FullName FROM ProviderContract_junction INNER JOIN ProviderList ON ProviderContract_junction.ProviderID = ProviderList.ProviderListID WHERE (ProviderContract_junction.ContractID = @ContractID) ORDER BY ProviderContract_junction.ProviderID DESC">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="GridView1" Name="ContractID" PropertyName="SelectedValue" Type="Int32" />
+            </SelectParameters>
+        </asp:SqlDataSource>
         <asp:GridView 
             ID="GridView1" 
             runat="server" 
