@@ -101,6 +101,7 @@
             HeaderStyle-CssClass="detailheader"
             FieldHeaderStyle-CssClass="detailfieldheader"
             AlternatingRowStyle-CssClass="alternatingRow"
+            RowStyle-Wrap="false" 
             Visible="false"
             >
             <Columns>
@@ -242,7 +243,7 @@
                 <asp:Parameter Name="SVC_PainMgmt" Type="Boolean" />
                 <asp:Parameter Name="SVC_Podiatry" Type="Boolean" />
                 <asp:Parameter Name="SVC_DME" Type="Boolean" />
-                <asp:Parameter Name="ContractID" Type="Int32" />
+                <%--<asp:Parameter Name="ContractID" Type="Int32" />--%>
             </UpdateParameters>
         </asp:SqlDataSource>
     </form>

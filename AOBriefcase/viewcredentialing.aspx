@@ -30,6 +30,7 @@
         <%-- %>The bottom two lines are for debugging the GUID sql querystring process--%>
             <asp:Label ID="viewGUID" runat="server" Visible="false"></asp:Label>
             <asp:Label ID="viewGUID2" runat="server" Visible="false"></asp:Label>        
+        <%--
         <asp:DetailsView ID="DetailsView2" runat="server" AutoGenerateRows="False" DataKeyNames="ContractID" DataSourceID="SqlDataSource1" Height="50px" Width="30%">
             <Fields>
                 <asp:BoundField DataField="ContractID" HeaderText="ContractID" InsertVisible="False" ReadOnly="True" SortExpression="ContractID" />
@@ -85,7 +86,32 @@
         </asp:DetailsView>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DemographicsConnectionString %>" SelectCommand="SELECT * FROM [Contract_Demographics] WHERE ([GUID] = @guide)">
             <SelectParameters>
-                <asp:QueryStringParameter Name="guide" QueryStringField="guid" /><%--Type="Object" /> Commenting this out apparently re-fixed the querystring--%>
+                <asp:QueryStringParameter Name="guide" QueryStringField="guid" />--%><%--Type="Object" /> Commenting this out apparently re-fixed the querystring--%>
+            <%--</SelectParameters>
+        </asp:SqlDataSource>--%>
+        <asp:GridView 
+            ID="GridView1" 
+            runat="server" 
+            AutoGenerateColumns="False" 
+            DataSourceID="SqlDataSource2"
+            Gridlines="None"
+            HeaderText="Credentialing Details"
+            CssClass="viewer"
+            HeaderStyle-CssClass="detailheader"
+            FieldHeaderStyle-CssClass="detailfieldheader"
+            AlternatingRowStyle-CssClass="alternatingRow"
+            >
+            <Columns>
+                <%--<asp:BoundField DataField="ProviderID" HeaderText="ProviderID" SortExpression="ProviderID" />--%>
+                <asp:BoundField DataField="Provider_FullName" HeaderText="Provider" SortExpression="Provider_FullName" ItemStyle-Width="50%"/>
+                <asp:BoundField DataField="Credentialing_Status" HeaderText="Status" SortExpression="Credentialing_Status" ItemStyle-Width="25%"/>
+                <asp:BoundField DataField="Credentialing_EffectiveDate" HeaderText="Effective Date" SortExpression="Credentialing_EffectiveDate" ItemStyle-Width="25%" />
+                <%--<asp:BoundField DataField="GUID" HeaderText="GUID" SortExpression="GUID" />--%>
+            </Columns>
+        </asp:GridView>
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [ProviderID], [Provider_FullName], [Credentialing_Status], [Credentialing_EffectiveDate], [GUID] FROM [Contract_Demographics] AS Base JOIN [ProviderContract_junction] AS Beta ON Base.[ContractID] = Beta.[ContractID] JOIN [ProviderList] AS Alpha ON [ProviderListID] = [ProviderID] WHERE [GUID] = @guid AND [Provider_Status] = 1">
+            <SelectParameters>
+                <asp:QueryStringParameter Name="guid" QueryStringField="guid" />
             </SelectParameters>
         </asp:SqlDataSource>
     </form>

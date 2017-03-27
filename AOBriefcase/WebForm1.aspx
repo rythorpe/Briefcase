@@ -26,7 +26,7 @@
         </asp:Menu>
         </div>
         <div id="titleText">
-        <h2>Welcome to the contract reference database. <br />
+        <h2>Welcome to the Contract Reference Database. <br />
             Please search for a contract to view more details.</h2>
         </div>
         <%--<p>

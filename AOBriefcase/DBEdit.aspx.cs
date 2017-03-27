@@ -12,8 +12,12 @@ using System.Web.Security; // Added for auth module
 namespace AOBriefcase
 {
     public partial class DBEdit : System.Web.UI.Page
-    {
-        // Page load with postback test. Temporary placeholders.
+    {        
+        /// <summary>
+        /// Page load with postback test. Temporary placeholders. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
             // Should detect if user is signed in. Otherwise, user is redirected to login page.
@@ -30,8 +34,12 @@ namespace AOBriefcase
                 Response.Write("");
             }            
         }
-
-        // Triggered on 'Select' button. Pops up detailed view dialogue.
+               
+        /// <summary>
+        /// Triggered on 'Select' button. Pops up detailed view dialogue. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void ChangeSelectedIndex(object sender, EventArgs e)
         {
             int viewPage = GridView1.PageIndex * 10;
@@ -44,7 +52,11 @@ namespace AOBriefcase
             btnEditCred.Visible = true;
         }
 
-        // Button to change contract editing interface to provider credentialing
+        /// <summary>
+        /// Button to change contract editing interface to provider credentialing 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnEditCred_Click(object sender, EventArgs e)
         {
             btnEditCred.Visible = false;
@@ -52,8 +64,12 @@ namespace AOBriefcase
             GridView2.Visible = true;
             btnEditCont.Visible = true;
         }
-
-        // Button to return back to contract detail editing from credentialing
+        
+        /// <summary>
+        /// Button to return back to contract detail editing from credentialing 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnEditCont_Click(object sender, EventArgs e)
         {
             btnEditCred.Visible = true;
@@ -61,8 +77,12 @@ namespace AOBriefcase
             btnEditCont.Visible = false;
             GridView2.Visible = false;
         }
-
-        // Debug trigger. Not currently used.
+                
+        /// <summary>
+        /// Debug trigger. Not currently used. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void ChangingSelectedIndex(object sender, GridViewSelectEventArgs e)
         {
             GridViewRow viewIndex = GridView1.Rows[e.NewSelectedIndex];
