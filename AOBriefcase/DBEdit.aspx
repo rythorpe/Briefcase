@@ -57,23 +57,22 @@
                 <asp:BoundField DataField="Amend_Count" HeaderText="Amend_Count" SortExpression="Amend_Count" />
                 <asp:BoundField DataField="Amend_Comment" HeaderText="Amend_Comment" SortExpression="Amend_Comment" />
                 <asp:BoundField DataField="Contract_Name" HeaderText="Contract_Name" SortExpression="Contract_Name" />
+                <asp:BoundField DataField="Contract_Alias1" HeaderText="Contract_Alias1" SortExpression="Contract_Alias1" />
+                <asp:BoundField DataField="Contract_Alias2" HeaderText="Contract_Alias2" SortExpression="Contract_Alias2" />
+                <asp:BoundField DataField="Contract_Alias3" HeaderText="Contract_Alias3" SortExpression="Contract_Alias3" />
+                <asp:BoundField DataField="Contract_Alias4" HeaderText="Contract_Alias4" SortExpression="Contract_Alias4" />
                 <asp:BoundField DataField="Contract_Type" HeaderText="Contract_Type" SortExpression="Contract_Type" />
                 <asp:BoundField DataField="Contract_Parent" HeaderText="Contract_Parent" SortExpression="Contract_Parent" />
                 <asp:BoundField DataField="Contract_FC" HeaderText="Contract_FC" SortExpression="Contract_FC" />
-                <asp:BoundField DataField="Contract_Alias3" HeaderText="Contract_Alias3" SortExpression="Contract_Alias3" />
-                <asp:BoundField DataField="Contract_Alias2" HeaderText="Contract_Alias2" SortExpression="Contract_Alias2" />
-                <asp:BoundField DataField="Contract_Alias1" HeaderText="Contract_Alias1" SortExpression="Contract_Alias1" />
                 <asp:BoundField DataField="Contract_UpdateDate" HeaderText="Contract_UpdateDate" SortExpression="Contract_UpdateDate" />
                 <asp:BoundField DataField="Contract_TerminateDate" HeaderText="Contract_TerminateDate" SortExpression="Contract_TerminateDate" />
                 <asp:BoundField DataField="Contract_EffectiveDate" HeaderText="Contract_EffectiveDate" SortExpression="Contract_EffectiveDate" />
                 <asp:BoundField DataField="Contract_Status" HeaderText="Contract_Status" SortExpression="Contract_Status" />
                 <asp:BoundField DataField="Contract_Homepage" HeaderText="Contract_Homepage" SortExpression="Contract_Homepage" />
                 <asp:BoundField DataField="Contract_Phone" HeaderText="Contract_Phone" SortExpression="Contract_Phone" />
-                <asp:BoundField DataField="Contract_PDF" HeaderText="Contract_PDF" SortExpression="Contract_PDF" />
-                <asp:BoundField DataField="Auth_ProviderPortal" HeaderText="Auth_ProviderPortal" SortExpression="Auth_ProviderPortal" />
+                <asp:BoundField DataField="Contract_PDF" HeaderText="Contract_PDF" SortExpression="Contract_PDF" />                
                 <asp:BoundField DataField="SVC_Injectibles" HeaderText="SVC_Injectibles" SortExpression="SVC_Injectibles" />
-                <asp:CheckBoxField DataField="SVC_Injections" HeaderText="SVC_Injections" SortExpression="SVC_Injections" />
-                <asp:BoundField DataField="Contract_Alias4" HeaderText="Contract_Alias4" SortExpression="Contract_Alias4" />
+                <asp:CheckBoxField DataField="SVC_Injections" HeaderText="SVC_Injections" SortExpression="SVC_Injections" />                
                 <asp:CheckBoxField DataField="SVC_OfficeVisits" HeaderText="SVC_OfficeVisits" SortExpression="SVC_OfficeVisits" />
                 <asp:CheckBoxField DataField="SVC_SX" HeaderText="SVC_SX" SortExpression="SVC_SX" />
                 <asp:CheckBoxField DataField="SVC_Radiology" HeaderText="SVC_Radiology" SortExpression="SVC_Radiology" />
@@ -81,7 +80,9 @@
                 <asp:CheckBoxField DataField="SVC_PT" HeaderText="SVC_PT" SortExpression="SVC_PT" />
                 <asp:CheckBoxField DataField="SVC_PainMgmt" HeaderText="SVC_PainMgmt" SortExpression="SVC_PainMgmt" />
                 <asp:CheckBoxField DataField="SVC_Podiatry" HeaderText="SVC_Podiatry" SortExpression="SVC_Podiatry" />
-                <asp:CheckBoxField DataField="SVC_DME" HeaderText="SVC_DME" SortExpression="SVC_DME" />                
+                <asp:CheckBoxField DataField="SVC_DME" HeaderText="SVC_DME" SortExpression="SVC_DME" />
+                <asp:BoundField DataField="Auth_ProviderPortal" HeaderText="Auth_ProviderPortal" SortExpression="Auth_ProviderPortal" />
+                <asp:BoundField DataField="Auth_OfficeVisits" HeaderText="Auth_OfficeVisits" SortExpression="Auth_OfficeVisits" />                
             </Fields>
         </asp:DetailsView>
 
@@ -147,7 +148,6 @@
                 <asp:CommandField ShowSelectButton="True" ButtonType="Button"/>
                 <asp:BoundField DataField="ContractID" HeaderText="ContractID" SortExpression="ContractID" InsertVisible="False" ReadOnly="True"></asp:BoundField>
                 <asp:BoundField DataField="AOID" HeaderText="AOID" SortExpression="AOID" />
-                    <%--<ItemStyle Width="10px"></ItemStyle>--%>
                 <asp:BoundField DataField="Amend_Count" HeaderText="Amend_Count" SortExpression="Amend_Count" />
                 <asp:BoundField DataField="Amend_Comment" HeaderText="Amend_Comment" SortExpression="Amend_Comment" />
                 <asp:BoundField DataField="Contract_Name" HeaderText="Contract_Name" SortExpression="Contract_Name" />
@@ -163,8 +163,7 @@
                 <asp:BoundField DataField="Contract_Status" HeaderText="Contract_Status" SortExpression="Contract_Status" />
                 <asp:BoundField DataField="Contract_Homepage" HeaderText="Contract_Homepage" SortExpression="Contract_Homepage" />
                 <asp:BoundField DataField="Contract_Phone" HeaderText="Contract_Phone" SortExpression="Contract_Phone" />
-                <asp:BoundField DataField="Contract_PDF" HeaderText="Contract_PDF" SortExpression="Contract_PDF" />
-                <asp:BoundField DataField="Auth_ProviderPortal" HeaderText="Auth_ProviderPortal" SortExpression="Auth_ProviderPortal" />
+                <asp:BoundField DataField="Contract_PDF" HeaderText="Contract_PDF" SortExpression="Contract_PDF" />                
                 <asp:BoundField DataField="SVC_Injectibles" HeaderText="SVC_Injectibles" SortExpression="SVC_Injectibles" />
                 <asp:CheckBoxField DataField="SVC_Injections" HeaderText="SVC_Injections" SortExpression="SVC_Injections" />
                 <asp:BoundField DataField="Contract_Alias4" HeaderText="Contract_Alias4" SortExpression="Contract_Alias4" />
@@ -176,9 +175,38 @@
                 <asp:CheckBoxField DataField="SVC_PainMgmt" HeaderText="SVC_PainMgmt" SortExpression="SVC_PainMgmt" />
                 <asp:CheckBoxField DataField="SVC_Podiatry" HeaderText="SVC_Podiatry" SortExpression="SVC_Podiatry" />
                 <asp:CheckBoxField DataField="SVC_DME" HeaderText="SVC_DME" SortExpression="SVC_DME" />
+                <asp:BoundField DataField="Auth_ProviderPortal" HeaderText="Auth_ProviderPortal" SortExpression="Auth_ProviderPortal" />
+                <asp:BoundField DataField="Auth_OfficeVisits" HeaderText="Auth_OfficeVisits" SortExpression="Auth_OfficeVisits" />
+                <asp:BoundField DataField="Auth_OfficeVisits_Note" HeaderText="Auth_OfficeVisits_Note" SortExpression="Auth_OfficeVisits_Note" />
+                <asp:BoundField DataField="Auth_SX" HeaderText="Auth_SX" SortExpression="Auth_SX" />
+                <asp:BoundField DataField="Auth_SX_Note" HeaderText="Auth_SX_Note" SortExpression="Auth_SX_Note" />
+                <asp:BoundField DataField="Auth_Radiology" HeaderText="Auth_Radiology" SortExpression="Auth_Radiology" />
+                <asp:BoundField DataField="Auth_Radiology_Note" HeaderText="Auth_Radiology_Note" SortExpression="Auth_Radiology_Note" />
+                <asp:BoundField DataField="Auth_PT" HeaderText="Auth_PT" SortExpression="Auth_PT" />
+                <asp:BoundField DataField="Auth_PT_Note" HeaderText="Auth_PT_Note" SortExpression="Auth_PT_Note" />
+                <asp:BoundField DataField="Auth_OT" HeaderText="Auth_OT" SortExpression="Auth_OT" />
+                <asp:BoundField DataField="Auth_OT_Note" HeaderText="Auth_OT_Note" SortExpression="Auth_OT_Note" />
+                <asp:BoundField DataField="Auth_PainMgmt" HeaderText="Auth_PainMgmt" SortExpression="Auth_PainMgmt" />
+                <asp:BoundField DataField="Auth_PainMgmt_Note" HeaderText="Auth_PainMgmt_Note" SortExpression="Auth_PainMgmt_Note" />
+                <asp:BoundField DataField="Auth_DME" HeaderText="Auth_DME" SortExpression="Auth_DME" />
+                <asp:BoundField DataField="Auth_DME_Note" HeaderText="Auth_DME_Note" SortExpression="Auth_DME_Note" />
+                <asp:BoundField DataField="Auth_Podiatry" HeaderText="Auth_Podiatry" SortExpression="Auth_Podiatry" />
+                <asp:BoundField DataField="Auth_Podiatry_Note" HeaderText="Auth_Podiatry_Note" SortExpression="Auth_Podiatry_Note" />
+                <asp:BoundField DataField="Auth_Injections" HeaderText="Auth_Injections" SortExpression="Auth_Injections" />
+                <asp:BoundField DataField="Auth_Injections_Note" HeaderText="Auth_Injections_Note" SortExpression="Auth_Injections_Note" />                
+
             </Columns>
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DemographicsConnectionString %>" DeleteCommand="DELETE FROM [Contract_Demographics] WHERE [ContractID] = @ContractID" InsertCommand="INSERT INTO [Contract_Demographics] ([AOID], [Amend_Count], [Amend_Comment], [Contract_Name], [Contract_Type], [Contract_Parent], [Contract_FC], [Contract_Alias3], [Contract_Alias2], [Contract_Alias1], [Contract_UpdateDate], [Contract_TerminateDate], [Contract_EffectiveDate], [Contract_Status], [Contract_Homepage], [Contract_Phone], [Contract_PDF], [Auth_ProviderPortal], [SVC_Injectibles], [SVC_Injections], [Contract_Alias4], [SVC_OfficeVisits], [SVC_SX], [SVC_Radiology], [SVC_OT], [SVC_PT], [SVC_PainMgmt], [SVC_Podiatry], [SVC_DME]) VALUES (@AOID, @Amend_Count, @Amend_Comment, @Contract_Name, @Contract_Type, @Contract_Parent, @Contract_FC, @Contract_Alias3, @Contract_Alias2, @Contract_Alias1, @Contract_UpdateDate, @Contract_TerminateDate, @Contract_EffectiveDate, @Contract_Status, @Contract_Homepage, @Contract_Phone, @Contract_PDF, @Auth_ProviderPortal, @SVC_Injectibles, @SVC_Injections, @Contract_Alias4, @SVC_OfficeVisits, @SVC_SX, @SVC_Radiology, @SVC_OT, @SVC_PT, @SVC_PainMgmt, @SVC_Podiatry, @SVC_DME)" SelectCommand="SELECT [ContractID], [AOID], [Amend_Count], [Amend_Comment], [Contract_Name], [Contract_Type], [Contract_Parent], [Contract_FC], [Contract_Alias3], [Contract_Alias2], [Contract_Alias1], [Contract_UpdateDate], [Contract_TerminateDate], [Contract_EffectiveDate], [Contract_Status], [Contract_Homepage], [Contract_Phone], [Contract_PDF], [Auth_ProviderPortal], [SVC_Injectibles], [SVC_Injections], [Contract_Alias4], [SVC_OfficeVisits], [SVC_SX], [SVC_Radiology], [SVC_OT], [SVC_PT], [SVC_PainMgmt], [SVC_Podiatry], [SVC_DME] FROM [Contract_Demographics] ORDER BY [AOID], [Amend_Count]" UpdateCommand="UPDATE [Contract_Demographics] SET [AOID] = @AOID, [Amend_Count] = @Amend_Count, [Amend_Comment] = @Amend_Comment, [Contract_Name] = @Contract_Name, [Contract_Type] = @Contract_Type, [Contract_Parent] = @Contract_Parent, [Contract_FC] = @Contract_FC, [Contract_Alias3] = @Contract_Alias3, [Contract_Alias2] = @Contract_Alias2, [Contract_Alias1] = @Contract_Alias1, [Contract_UpdateDate] = @Contract_UpdateDate, [Contract_TerminateDate] = @Contract_TerminateDate, [Contract_EffectiveDate] = @Contract_EffectiveDate, [Contract_Status] = @Contract_Status, [Contract_Homepage] = @Contract_Homepage, [Contract_Phone] = @Contract_Phone, [Contract_PDF] = @Contract_PDF, [Auth_ProviderPortal] = @Auth_ProviderPortal, [SVC_Injectibles] = @SVC_Injectibles, [SVC_Injections] = @SVC_Injections, [Contract_Alias4] = @Contract_Alias4, [SVC_OfficeVisits] = @SVC_OfficeVisits, [SVC_SX] = @SVC_SX, [SVC_Radiology] = @SVC_Radiology, [SVC_OT] = @SVC_OT, [SVC_PT] = @SVC_PT, [SVC_PainMgmt] = @SVC_PainMgmt, [SVC_Podiatry] = @SVC_Podiatry, [SVC_DME] = @SVC_DME WHERE [ContractID] = @ContractID">
+        
+        <asp:SqlDataSource 
+            ID="SqlDataSource1" 
+            runat="server" 
+            ConnectionString="<%$ ConnectionStrings:DemographicsConnectionString %>" 
+            DeleteCommand="DELETE FROM [Contract_Demographics] WHERE [ContractID] = @ContractID" 
+            InsertCommand="INSERT INTO [Contract_Demographics] ([AOID], [Amend_Count], [Amend_Comment], [Contract_Name], [Contract_Type], [Contract_Parent], [Contract_FC], [Contract_Alias3], [Contract_Alias2], [Contract_Alias1], [Contract_UpdateDate], [Contract_TerminateDate], [Contract_EffectiveDate], [Contract_Status], [Contract_Homepage], [Contract_Phone], [Contract_PDF], [Auth_ProviderPortal], [SVC_Injectibles], [SVC_Injections], [Contract_Alias4], [SVC_OfficeVisits], [SVC_SX], [SVC_Radiology], [SVC_OT], [SVC_PT], [SVC_PainMgmt], [SVC_Podiatry], [SVC_DME], [Auth_OfficeVisits], [Auth_OfficeVisits_Note], [Auth_SX], [Auth_SX_Note], [Auth_Radiology], [Auth_Radiology_Note], [Auth_PT], [Auth_PT_Note], [Auth_OT], [Auth_OT_Note], [Auth_PainMgmt], [Auth_PainMgmt_Note], [Auth_DME], [Auth_DME_Note], [Auth_Podiatry], [Auth_Podiatry_Note], [Auth_Injections], [Auth_Injections_Note]) VALUES (@AOID, @Amend_Count, @Amend_Comment, @Contract_Name, @Contract_Type, @Contract_Parent, @Contract_FC, @Contract_Alias3, @Contract_Alias2, @Contract_Alias1, @Contract_UpdateDate, @Contract_TerminateDate, @Contract_EffectiveDate, @Contract_Status, @Contract_Homepage, @Contract_Phone, @Contract_PDF, @Auth_ProviderPortal, @SVC_Injectibles, @SVC_Injections, @Contract_Alias4, @SVC_OfficeVisits, @SVC_SX, @SVC_Radiology, @SVC_OT, @SVC_PT, @SVC_PainMgmt, @SVC_Podiatry, @SVC_DME, @Auth_OfficeVisits, @Auth_OfficeVisits_Note, @Auth_SX, @Auth_SX_Note, @Auth_Radiology, @Auth_Radiology_Note, @Auth_PT, @Auth_PT_Note, @Auth_OT, @Auth_OT_Note, @Auth_PainMgmt, @Auth_PainMgmt_Note, @Auth_DME, @Auth_DME_Note, @Auth_Podiatry, @Auth_Podiatry_Note, @Auth_Injections, @Auth_Injections_Note)" 
+            SelectCommand="SELECT [ContractID], [AOID], [Amend_Count], [Amend_Comment], [Contract_Name], [Contract_Type], [Contract_Parent], [Contract_FC], [Contract_Alias3], [Contract_Alias2], [Contract_Alias1], [Contract_UpdateDate], [Contract_TerminateDate], [Contract_EffectiveDate], [Contract_Status], [Contract_Homepage], [Contract_Phone], [Contract_PDF], [Auth_ProviderPortal], [SVC_Injectibles], [SVC_Injections], [Contract_Alias4], [SVC_OfficeVisits], [SVC_SX], [SVC_Radiology], [SVC_OT], [SVC_PT], [SVC_PainMgmt], [SVC_Podiatry], [SVC_DME], [Auth_OfficeVisits], [Auth_OfficeVisits_Note], [Auth_SX], [Auth_SX_Note], [Auth_Radiology], [Auth_Radiology_Note], [Auth_PT], [Auth_PT_Note], [Auth_OT], [Auth_OT_Note], [Auth_PainMgmt], [Auth_PainMgmt_Note], [Auth_DME], [Auth_DME_Note], [Auth_Podiatry], [Auth_Podiatry_Note], [Auth_Injections], [Auth_Injections_Note] FROM [Contract_Demographics] ORDER BY [AOID], [Amend_Count]" 
+            UpdateCommand="UPDATE [Contract_Demographics] SET [AOID] = @AOID, [Amend_Count] = @Amend_Count, [Amend_Comment] = @Amend_Comment, [Contract_Name] = @Contract_Name, [Contract_Type] = @Contract_Type, [Contract_Parent] = @Contract_Parent, [Contract_FC] = @Contract_FC, [Contract_Alias3] = @Contract_Alias3, [Contract_Alias2] = @Contract_Alias2, [Contract_Alias1] = @Contract_Alias1, [Contract_UpdateDate] = @Contract_UpdateDate, [Contract_TerminateDate] = @Contract_TerminateDate, [Contract_EffectiveDate] = @Contract_EffectiveDate, [Contract_Status] = @Contract_Status, [Contract_Homepage] = @Contract_Homepage, [Contract_Phone] = @Contract_Phone, [Contract_PDF] = @Contract_PDF, [Auth_ProviderPortal] = @Auth_ProviderPortal, [SVC_Injectibles] = @SVC_Injectibles, [SVC_Injections] = @SVC_Injections, [Contract_Alias4] = @Contract_Alias4, [SVC_OfficeVisits] = @SVC_OfficeVisits, [SVC_SX] = @SVC_SX, [SVC_Radiology] = @SVC_Radiology, [SVC_OT] = @SVC_OT, [SVC_PT] = @SVC_PT, [SVC_PainMgmt] = @SVC_PainMgmt, [SVC_Podiatry] = @SVC_Podiatry, [SVC_DME] = @SVC_DME, [Auth_OfficeVisits] = @Auth_OfficeVisits, [Auth_OfficeVisits_Note] = @Auth_OfficeVisits_Note, [Auth_SX] = @Auth_SX, [Auth_SX_Note] = @Auth_SX_Note, [Auth_Radiology] = @Auth_Radiology, [Auth_Radiology_Note] = @Auth_Radiology_Note, [Auth_PT] = @Auth_PT, [Auth_PT_Note] = @Auth_PT_Note, [Auth_OT] = @Auth_OT, [Auth_OT_Note] = @Auth_OT_Note, [Auth_PainMgmt] = @Auth_PainMgmt, [Auth_PainMgmt_Note] = @Auth_PainMgmt_Note, [Auth_DME] = @Auth_DME, [Auth_DME_Note] = @Auth_DME_Note, [Auth_Podiatry] = @Auth_Podiatry, [Auth_Podiatry_Note] = @Auth_Podiatry_Note, [Auth_Injections] = @Auth_Injections, [Auth_Injections_Note] = @Auth_Injections_Note WHERE [ContractID] = @ContractID"
+            >
             <DeleteParameters>
                 <asp:Parameter Name="ContractID" Type="Int32" />
             </DeleteParameters>
@@ -199,8 +227,7 @@
                 <asp:Parameter Name="Contract_Status" Type="String" />
                 <asp:Parameter Name="Contract_Homepage" Type="String" />
                 <asp:Parameter Name="Contract_Phone" Type="String" />
-                <asp:Parameter Name="Contract_PDF" Type="Int32" />
-                <asp:Parameter Name="Auth_ProviderPortal" Type="String" />
+                <asp:Parameter Name="Contract_PDF" Type="Int32" />                
                 <asp:Parameter Name="SVC_Injectibles" Type="String" />
                 <asp:Parameter Name="SVC_Injections" Type="Boolean" />
                 <asp:Parameter Name="Contract_Alias4" Type="String" />
@@ -212,6 +239,26 @@
                 <asp:Parameter Name="SVC_PainMgmt" Type="Boolean" />
                 <asp:Parameter Name="SVC_Podiatry" Type="Boolean" />
                 <asp:Parameter Name="SVC_DME" Type="Boolean" />
+                <asp:Parameter Name="Auth_ProviderPortal" Type="String" />
+                <asp:Parameter Name="Auth_OfficeVisits" Type="String" />
+                <asp:Parameter Name="Auth_OfficeVisits_Note" Type="String" />
+                <asp:Parameter Name="Auth_SX" Type="String" />
+                <asp:Parameter Name="Auth_SX_Note" Type="String" />
+                <asp:Parameter Name="Auth_Radiology" Type="String" />
+                <asp:Parameter Name="Auth_Radiology_Note" Type="String" />
+                <asp:Parameter Name="Auth_PT" Type="String" />
+                <asp:Parameter Name="Auth_PT_Note" Type="String" />
+                <asp:Parameter Name="Auth_OT" Type="String" />
+                <asp:Parameter Name="Auth_OT_Note" Type="String" />
+                <asp:Parameter Name="Auth_PainMgmt" Type="String" />
+                <asp:Parameter Name="Auth_PainMgmt_Note" Type="String" />
+                <asp:Parameter Name="Auth_DME" Type="String" />
+                <asp:Parameter Name="Auth_DME_Note" Type="String" />
+                <asp:Parameter Name="Auth_Podiatry" Type="String" />
+                <asp:Parameter Name="Auth_Podiatry_Note" Type="String" />
+                <asp:Parameter Name="Auth_Injections" Type="String" />
+                <asp:Parameter Name="Auth_Injections_Note" Type="String" />                
+
             </InsertParameters>
             <UpdateParameters>
                 <asp:Parameter Name="AOID" Type="String" />
@@ -230,8 +277,7 @@
                 <asp:Parameter Name="Contract_Status" Type="String" />
                 <asp:Parameter Name="Contract_Homepage" Type="String" />
                 <asp:Parameter Name="Contract_Phone" Type="String" />
-                <asp:Parameter Name="Contract_PDF" Type="Int32" />
-                <asp:Parameter Name="Auth_ProviderPortal" Type="String" />
+                <asp:Parameter Name="Contract_PDF" Type="Int32" />                
                 <asp:Parameter Name="SVC_Injectibles" Type="String" />
                 <asp:Parameter Name="SVC_Injections" Type="Boolean" />
                 <asp:Parameter Name="Contract_Alias4" Type="String" />
@@ -243,6 +289,25 @@
                 <asp:Parameter Name="SVC_PainMgmt" Type="Boolean" />
                 <asp:Parameter Name="SVC_Podiatry" Type="Boolean" />
                 <asp:Parameter Name="SVC_DME" Type="Boolean" />
+                <asp:Parameter Name="Auth_ProviderPortal" Type="String" />
+                <asp:Parameter Name="Auth_OfficeVisits" Type="String" />
+                <asp:Parameter Name="Auth_OfficeVisits_Note" Type="String" />
+                <asp:Parameter Name="Auth_SX" Type="String" />
+                <asp:Parameter Name="Auth_SX_Note" Type="String" />
+                <asp:Parameter Name="Auth_Radiology" Type="String" />
+                <asp:Parameter Name="Auth_Radiology_Note" Type="String" />
+                <asp:Parameter Name="Auth_PT" Type="String" />
+                <asp:Parameter Name="Auth_PT_Note" Type="String" />
+                <asp:Parameter Name="Auth_OT" Type="String" />
+                <asp:Parameter Name="Auth_OT_Note" Type="String" />
+                <asp:Parameter Name="Auth_PainMgmt" Type="String" />
+                <asp:Parameter Name="Auth_PainMgmt_Note" Type="String" />
+                <asp:Parameter Name="Auth_DME" Type="String" />
+                <asp:Parameter Name="Auth_DME_Note" Type="String" />
+                <asp:Parameter Name="Auth_Podiatry" Type="String" />
+                <asp:Parameter Name="Auth_Podiatry_Note" Type="String" />
+                <asp:Parameter Name="Auth_Injections" Type="String" />
+                <asp:Parameter Name="Auth_Injections_Note" Type="String" />
                 <%--<asp:Parameter Name="ContractID" Type="Int32" />--%>
             </UpdateParameters>
         </asp:SqlDataSource>
