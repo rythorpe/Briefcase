@@ -26,8 +26,8 @@
         </asp:Menu>
         </div>
         <div id="titleText">
-        <h2>Welcome to the Contract Reference Database. <br />
-            Please search for a contract to view more details.</h2>
+        <h2>Welcome to the Contract Reference Database.</h2><br />
+            <h3>This tool is to help determine if we are contracted with a patient's particular insurance. Please enter all or a portion of the insurance name. You may also enter a known abbreviated name for the insurance (ie. BMG for Beaver Medical Group)</h3>
         </div>
         <%--<p>
             | Search for a contract || 
@@ -38,7 +38,7 @@
             <asp:Button ID="btnSearch" runat="server" OnClick="btnSearch_Click" Text="Search" ValidationGroup="Search"/>            
             <asp:Button ID="btnViewall" runat="server" OnClick="btnViewall_Click" Text="View All" ValidationGroup="OmniView"/>
             <asp:RequiredFieldValidator ID="rfvName" runat="server" ControlToValidate="txtName" ErrorMessage="Blank entry, please try again" Display="Dynamic" ValidationGroup="Search"/>            
-            <asp:RegularExpressionValidator ID="revName" runat="server" ControlToValidate="txtName" ValidationExpression="^\s*[a-zA-Z,\s]+\s*$" ErrorMessage="Invalid characters detected, please try again" Display="Dynamic" ValidationGroup="Search"/>
+            <asp:RegularExpressionValidator ID="revName" runat="server" ControlToValidate="txtName" ValidationExpression="^\s*[a-zA-Z,\s]+\s*$" ErrorMessage="Invalid search term, please try again" Display="Dynamic" ValidationGroup="Search"/>
             <asp:PlaceHolder ID="phContractSearch" runat="server" Visible="false">            
             <asp:Repeater ID="rpContractSearchView" runat="server" >
             <ItemTemplate>

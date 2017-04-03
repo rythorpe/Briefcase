@@ -23,6 +23,10 @@
         <h2>You have entered the contract configuration module. Please be very careful here.</h2>
         <br /><br />
         <a href="ProviderEdit.aspx">Configure Providers</a>
+        <br />
+        <a href="UserRegistry.aspx">Configure Billing Users</a>
+        <br />
+        <a href="AttachmentInterface.aspx">Configure Attachments</a>
         <br /><br />
     <div>
         <%--Welcome
@@ -38,7 +42,8 @@
             runat="server" 
             AutoGenerateRows="False" 
             DataKeyNames="ContractID" 
-            DataSourceID="SqlDataSource1" 
+            DataSourceID="SqlDataSource1"
+            OnRowDataBound="DV1_AttachmentCheck" 
             Height="50px" 
             Width="400px" 
             Visible="False" 
@@ -50,6 +55,9 @@
             FieldHeaderStyle-CssClass="detailfieldheader"
             AlternatingRowStyle-CssClass="alternatingRow"
             >
+<AlternatingRowStyle CssClass="alternatingRow"></AlternatingRowStyle>
+
+<FieldHeaderStyle CssClass="detailfieldheader"></FieldHeaderStyle>
             <Fields>
                 <asp:CommandField ShowInsertButton="True" ShowDeleteButton="True" ShowEditButton="True" ButtonType="Button"/>
                 <asp:BoundField DataField="ContractID" HeaderText="ContractID" InsertVisible="False" ReadOnly="True" SortExpression="ContractID" />
@@ -69,8 +77,21 @@
                 <asp:BoundField DataField="Contract_EffectiveDate" HeaderText="Contract_EffectiveDate" SortExpression="Contract_EffectiveDate" />
                 <asp:BoundField DataField="Contract_Status" HeaderText="Contract_Status" SortExpression="Contract_Status" />
                 <asp:BoundField DataField="Contract_Homepage" HeaderText="Contract_Homepage" SortExpression="Contract_Homepage" />
-                <asp:BoundField DataField="Contract_Phone" HeaderText="Contract_Phone" SortExpression="Contract_Phone" />
-                <asp:BoundField DataField="Contract_PDF" HeaderText="Contract_PDF" SortExpression="Contract_PDF" />                
+                <asp:BoundField DataField="Contract_Phone" HeaderText="Contract_Phone" SortExpression="Contract_Phone" />                
+                <asp:TemplateField HeaderText="Contract_PDF" SortExpression="Contract_PDF">
+                    <EditItemTemplate>
+                        <asp:LinkButton ID="lbtnContract_PDF" runat="server" CommandArgument='<%# Bind("Contract_PDF") %>' CommandName="UploadtoContract" Text='<%# Bind("Contract_PDF") %>'/>
+                        <asp:FileUpload ID="fileU_Contract_PDF" runat="server" />
+                        <asp:Button ID="btnContract_PDFUpload" runat="server" Text="Upload" CommandName="btnContract_PDFUpload_Click" />
+                        <%--<asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Contract_PDF") %>'></asp:TextBox>--%>
+                    </EditItemTemplate>
+                    <InsertItemTemplate>
+                        <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Contract_PDF") %>'></asp:TextBox>
+                    </InsertItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="Label1" runat="server" Text='<%# Bind("Contract_PDF") %>'></asp:Label>                        
+                    </ItemTemplate>
+                </asp:TemplateField>
                 <asp:BoundField DataField="SVC_Injectibles" HeaderText="SVC_Injectibles" SortExpression="SVC_Injectibles" />
                 <asp:CheckBoxField DataField="SVC_Injections" HeaderText="SVC_Injections" SortExpression="SVC_Injections" />                
                 <asp:CheckBoxField DataField="SVC_OfficeVisits" HeaderText="SVC_OfficeVisits" SortExpression="SVC_OfficeVisits" />
@@ -102,6 +123,10 @@
                 <asp:BoundField DataField="Auth_Injections_Note" HeaderText="Auth_Injections_Note" SortExpression="Auth_Injections_Note" />
 
             </Fields>
+
+<HeaderStyle CssClass="detailheader"></HeaderStyle>
+
+<RowStyle Wrap="False"></RowStyle>
         </asp:DetailsView>
 
         <asp:GridView 

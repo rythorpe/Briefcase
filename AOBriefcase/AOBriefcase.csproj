@@ -95,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin.aspx" />
+    <Content Include="AttachmentInterface.aspx" />
     <Content Include="DBEdit.aspx" />
     <Content Include="DBEdit.css" />
     <Content Include="disclaimer.aspx" />
@@ -109,6 +110,7 @@
     <Content Include="ProviderEdit.aspx" />
     <Content Include="ProviderEdit.css" />
     <Content Include="viewauthreq.css" />
+    <Content Include="viewbilling.aspx" />
     <Content Include="viewcredentialing.css" />
     <Content Include="WebForm1.css" />
     <None Include="Properties\PublishProfiles\Beta.pubxml" />
@@ -141,6 +143,13 @@
     </Compile>
     <Compile Include="Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AttachmentInterface.aspx.cs">
+      <DependentUpon>AttachmentInterface.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AttachmentInterface.aspx.designer.cs">
+      <DependentUpon>AttachmentInterface.aspx</DependentUpon>
     </Compile>
     <Compile Include="ContractDirectory.cs" />
     <Compile Include="DBEdit.aspx.cs">
@@ -178,6 +187,13 @@
     </Compile>
     <Compile Include="viewauthreq.aspx.designer.cs">
       <DependentUpon>viewauthreq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="viewbilling.aspx.cs">
+      <DependentUpon>viewbilling.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="viewbilling.aspx.designer.cs">
+      <DependentUpon>viewbilling.aspx</DependentUpon>
     </Compile>
     <Compile Include="viewcredentialing.aspx.cs">
       <DependentUpon>viewcredentialing.aspx</DependentUpon>

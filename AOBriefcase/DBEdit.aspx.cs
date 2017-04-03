@@ -87,6 +87,50 @@ namespace AOBriefcase
         {
             GridViewRow viewIndex = GridView1.Rows[e.NewSelectedIndex];
             StatusLabel1.Text = "The changing trigger was tripped + viewIndex.Cells[2].Text";
-        }        
+        }
+        
+        protected void DV1_AttachmentCheck(object sender, GridViewRowEventArgs e)
+        {
+            var lbtnContract_PDF = (LinkButton)e.Row.FindControl("lbtnContract_PDF");
+            var fileU_Contract_PDF = (FileUpload)e.Row.FindControl("fileU_Contract_PDF");
+            var btnContract_PDFUpload = (Button)e.Row.FindControl("btnContract_PDFUpload");
+
+            if(lbtnContract_PDF == null)
+            {
+                lbtnContract_PDF.Visible = false;
+                fileU_Contract_PDF.Visible = true;
+                btnContract_PDFUpload.Visible = true;
+            }
+            else
+            {
+                lbtnContract_PDF.Visible = true;
+                fileU_Contract_PDF.Visible = false;
+                btnContract_PDFUpload.Visible = false;
+            }
+            //var lbtnContract_PDF = (LinkButton)e.Row.FindControl("lbtnContract_PDF");
+            //var lbtnContract_PDFUpload = (LinkButton)e.Row.FindControl("lbtnContract_PDFUpload");
+            //if (lbtnContract_PDF != null)                
+            //{
+            //    lbtnContract_PDF.Visible = true;
+            //    lbtnContract_PDFUpload.Visible = false;
+            //}
+            //else
+            //{
+            //    lbtnContract_PDF.Visible = false;
+            //    lbtnContract_PDFUpload.Visible = true;
+            //}
+        }
+
+
+        protected void btnContract_PDFUpload_Click(object sender, GridViewRowEventArgs e)
+        {
+            var fileU_Contract_PDF = (FileUpload)e.Row.FindControl("fileU_Contract_PDF");
+
+            if (fileU_Contract_PDF.HasFile)
+            {
+                fileU_Contract_PDF.PostedFile.SaveAs(Server.MapPath("~/App_Data/Attachments/Authorizations/") + fileU_Contract_PDF.FileName);
+            }
+        }
+
     }
 }
