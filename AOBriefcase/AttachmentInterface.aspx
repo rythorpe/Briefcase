@@ -38,11 +38,11 @@
             OnSelectedIndexChanged="IndexSelected"
             >
             <Columns>
-                <asp:CommandField ShowSelectButton="True" />
+                <asp:CommandField ShowSelectButton="True" ButtonType="Button" />
                 <asp:BoundField DataField="AOID" HeaderText="AOID" SortExpression="AOID" />
                 <asp:BoundField DataField="Contract_Name" HeaderText="Contract Name" SortExpression="Contract_Name"></asp:BoundField>
                 <asp:BoundField DataField="Contract_PDF" HeaderText="Authorizations Detail File" SortExpression="Contract_PDF"></asp:BoundField>
-                <%--<asp:BoundField DataField="Billing_PDF" HeaderText="Billing Detail File" SortExpression="Billing_PDF"></asp:BoundField>--%>
+                <asp:BoundField DataField="Billing_PDF" HeaderText="Billing Detail File" SortExpression="Billing_PDF" /><asp:BoundField />                
             </Columns>
         </asp:GridView>
 
