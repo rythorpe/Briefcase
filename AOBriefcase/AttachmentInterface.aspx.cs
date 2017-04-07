@@ -23,22 +23,9 @@ namespace AOBriefcase
             if (AuthUpload1.HasFile)
             {
                 string fileName = Path.GetFileName(AuthUpload1.PostedFile.FileName);
-                string AuthMapPath = "~/App_Data/Attachments/Authorizations/";
-                string PathFile = AuthMapPath + fileName;
-                //AuthUpload1.PostedFile.SaveAs(Server.MapPath(AuthMapPath) + fileName);
-                //InsertAuthFilepath(PathFile);
-                SqlConnection sqlcon = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-                sqlcon.Open();
-                SqlCommand cmd = new SqlCommand("spUpdateAuthFilePath", sqlcon);
-                cmd.CommandType = CommandType.StoredProcedure;
-                SqlParameter param = new SqlParameter("@filepath", SqlDbType.VarChar);
-                SqlParameter ChosenIndex = new SqlParameter("@SelectedIndex", SqlDbType.Int);
-                param.Value = PathFile;
-                ChosenIndex.Value = GridView1.SelectedIndex;
-                cmd.Parameters.Add(ChosenIndex);
-                cmd.Parameters.Add(param);
-                cmd.ExecuteNonQuery();
-                sqlcon.Close();
+                string AuthMapPath = "~/App_Data/Attachments/Authorizations/";                
+                AuthUpload1.PostedFile.SaveAs(Server.MapPath(AuthMapPath) + fileName);
+                InsertAuthFilepath(fileName);                
                 Response.Redirect(Request.Url.AbsoluteUri);
             }
         }
@@ -48,7 +35,9 @@ namespace AOBriefcase
             if (BillUpload1.HasFile)
             {
                 string fileName = Path.GetFileName(BillUpload1.PostedFile.FileName);
-                BillUpload1.PostedFile.SaveAs(Server.MapPath("~/App_Data/Attachments/Billing/") + fileName);
+                string BillMapPath = "~/App_Data/Attachments/Billing/";
+                BillUpload1.PostedFile.SaveAs(Server.MapPath(BillMapPath) + fileName);
+                InsertBillFilepath(fileName);
                 Response.Redirect(Request.Url.AbsoluteUri);
             }
         }
@@ -60,39 +49,66 @@ namespace AOBriefcase
         }
                
 
-        //private void InsertAuthFilepath(string filepath)
-        //{
-        //    SqlConnection sqlcon = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-            //string sql = "UPDATE [Contract_Demographics] SET [Contract_PDF] = @filepath WHERE [ContractID]=@SelectedIndex";
-            
-            //try
-            //{
-                //sqlcon.Open();
-                //SqlCommand cmd = new SqlCommand("spUpdateAuthFilePath", sqlcon);
-                //cmd.CommandType = CommandType.StoredProcedure;
-                //SqlParameter param = new SqlParameter("@filepath", SqlDbType.VarChar);
-                //SqlParameter ChosenIndex = new SqlParameter("@SelectedIndex", SqlDbType.Int);
-                //param.Value = filepath;
-                //ChosenIndex.Value = GridView1.SelectedIndex;
-                //cmd.Parameters.Add(ChosenIndex);
-                //cmd.Parameters.Add(param);
-            //}
-            //catch(Exception ex)
-            //{
-            //    string msg = "Error when inserting filepath";
-            //    msg += ex.Message;
-            //    throw new Exception(msg);
-            //}
-            //finally
-            //{
-               // sqlcon.Close();
-            //}
-        //}
+        private void InsertAuthFilepath(string filepath)
+        {
+            SqlConnection sqlcon = new SqlConnection(GetConnection());
+            try
+            {
+                sqlcon.Open();
+                SqlCommand cmd = new SqlCommand("spUpdateAuthFilePath", sqlcon);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlParameter param = new SqlParameter("@filepath", SqlDbType.VarChar);
+                SqlParameter ChosenIndex = new SqlParameter("@SelectedIndex", SqlDbType.Int);
+                param.Value = filepath;
+                ChosenIndex.Value = GridView1.SelectedIndex + 1;                
+                cmd.Parameters.Add(ChosenIndex);
+                cmd.Parameters.Add(param);
+                cmd.ExecuteNonQuery();
+            }
+            catch(Exception ex)
+            {
+                string msg = "Error when inserting filepath";
+                msg += ex.Message;
+                throw new Exception(msg);
+            }
+            finally
+            {
+                sqlcon.Close();
+            }
+        }
 
-        //private string GetConnection()
-        //{
-        //    return System.Configuration.ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-        //}
+        private void InsertBillFilepath(string filepath)
+        {
+            SqlConnection sqlcon = new SqlConnection(GetConnection());
+            try
+            {
+                sqlcon.Open();
+                SqlCommand cmd = new SqlCommand("spUpdateBillFilePath", sqlcon);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlParameter param = new SqlParameter("@filepath", SqlDbType.VarChar);
+                SqlParameter ChosenIndex = new SqlParameter("@SelectedIndex", SqlDbType.Int);
+                param.Value = filepath;
+                ChosenIndex.Value = GridView1.SelectedIndex + 1;
+                cmd.Parameters.Add(ChosenIndex);
+                cmd.Parameters.Add(param);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                string msg = "Error when inserting filepath";
+                msg += ex.Message;
+                throw new Exception(msg);
+            }
+            finally
+            {
+                sqlcon.Close();
+            }
+        }
+
+        private string GetConnection()
+        {
+            return System.Configuration.ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+        }
 
     }
 
