@@ -4,7 +4,20 @@
 h2{
     font-size:1.4em;
     font-family:Arial, Helvetica, sans-serif;
-    color:#2b4b83;
+    color:#888889;
+    background-color:transparent;
+    width: auto;
+    right: 30px;
+}
+
+h3{
+    position: relative;
+    font-size:1.1em;
+    font-family:Arial, Helvetica, sans-serif;
+    color: #888889;
+    background-color:transparent;
+    width: auto;
+    margin: 2px 15px;
 }
 
 p{
@@ -13,35 +26,98 @@ p{
     font:.8em;
 }
 
-#results{
-    font-family:Arial, Helvetica, sans-serif;    
+input[type=text]{
+    width: 300px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-size: 40px 40px;
+    background-position: initial; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
 }
 
-#NavigationBar ul{        
+input[type=text]:focus {
+    width: 50%;
 }
 
-#NavigationBar ul li{
-    border:1px solid white;
-    border-radius:5px;
-    background-color:#fed426;
-    text-decoration:none;
+.btn1{
+    padding: 16px 25px;
+    border: none;
+    border-radius: 8px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: white;
+    background-color: #25477d;
+}
+
+.btn1:hover{
+    background-color: transparent;
+    color: #fea608;
+    border: 1px solid #fea608
+}
+
+#AOLogo{
+    position: relative;
+    width: 350px;
+    height: auto;
+    margin: 10px 0px;
+}
+
+#CRD{
+    position: absolute;
+    right: 5px;
+}
+
+#NavigationBar{
+    position: relative;
+    height: 60px;
+    background-color: #353535;
+}
+
+#Navi ul li{
+    position: relative;
+    top: 15px;
+    border-radius:0px;
+    height: 45px;
+    width: 200px;
     font-family:Arial, Helvetica, sans-serif;
     text-align:center;    
-    height: auto;
-    padding:10px 12px;
-    margin:3px;
-    background:linear-gradient(to bottom,#fbecb5 0%,#fed426 100%);
-    /*background-image:-webkit-linear-gradient(#FBECB5,#FED426);*/
+    padding:15px 12px;
+    margin: 0;
+    background-color: #25477d;
     background-repeat: no-repeat;    
 }
 
-#NavigationBar ul li a{
-    color:black;
+#Navi ul li a{
+    color:white;
     font-weight:bold;
 }
 
-#NavigationBar ul li a:hover{
+#NavigationBar ul li a.highlight:hover{
     /*font-weight:bold;*/
+    color: aliceblue;
     text-decoration:underline;
-    cursor:pointer;
+    cursor: pointer;
+}
+
+#searchIcon{
+    position: relative;
+    left: 34px;
+    font-size: 15px;
+    color: #ccc;
+}
+
+#results{
+    position: center;
+    margin: 100px 100px 100px 100px;
+    font-family:Arial, Helvetica, sans-serif;    
 }
