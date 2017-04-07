@@ -26,6 +26,7 @@
                     <asp:MenuItem NavigateUrl="~/disclaimer.aspx" Text="Home" />
                     <asp:MenuItem NavigateUrl="~/WebForm1.aspx" Text="Search for a Contract" />
                     <asp:MenuItem NavigateUrl="~/DBEdit.aspx" Text="Edit Contracts" />
+                    <asp:MenuItem NavigateUrl="~/Contact.aspx" Text="Contact" />
                 </Items>
             </asp:Menu>
         </div>

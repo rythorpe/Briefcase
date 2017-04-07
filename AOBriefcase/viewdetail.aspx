@@ -4,9 +4,9 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Contract Detail Viewer</title>
+    <title>Contract Detail Viewer</title>    
     <link rel="shortcut icon" type="image/x-icon" href="~/Images/favicon.ico" runat="server"/>
-    <link rel="icon" type="image/ico" href="~/Images/favicon.ico" runat="server"/>
+    <link rel="icon" type="image/ico" href="~/Images/favicon.ico" runat="server"/>    
     <%--Linking external style sheet does not work for some wierd reason. Using internal css.--%>
 <style type="text/css" media="screen">
     @import "viewdetail.css";
@@ -58,7 +58,7 @@ dl dt dd{
             <asp:Label ID="viewGUID" runat="server" Visible="false"></asp:Label>
             <asp:Label ID="viewGUID2" runat="server" Visible="false"></asp:Label>                
         <%--Commenting the hardcoded entries here makes the whole thing explode for some reason. Use Visible="false.--%>
-        <asp:PlaceHolder ID="phViewDetail" runat="server" Visible="false">
+        <%--<asp:PlaceHolder ID="phViewDetail" runat="server" Visible="false">
             <dl>
                 <dt style="padding-left: 50px;">Contract Details<br /><br /></dt>                           
                 <dt>Contract Name:<br /></dt>
@@ -136,7 +136,7 @@ dl dt dd{
                 <dt><br /><br /><br /></dt>
                 <dd><a href="WebForm1.aspx">Back to search page</a></dd>
             </dl>
-        </asp:PlaceHolder>
+        </asp:PlaceHolder>--%>
         <asp:PlaceHolder ID="phNoViewDetail" runat="server" Visible="false">
             <p>No contract selected</p>
         </asp:PlaceHolder>
