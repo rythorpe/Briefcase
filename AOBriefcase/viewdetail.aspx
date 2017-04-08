@@ -4,10 +4,13 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Contract Detail Viewer</title>    
+    <title>Contract Detail Viewer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
     <link rel="shortcut icon" type="image/x-icon" href="~/Images/favicon.ico" runat="server"/>
-    <link rel="icon" type="image/ico" href="~/Images/favicon.ico" runat="server"/>    
-    <%--Linking external style sheet does not work for some wierd reason. Using internal css.--%>
+    <link rel="icon" type="image/ico" href="~/Images/favicon.ico" runat="server"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="viewdetail.css" type="text/css" />
+    
 <style type="text/css" media="screen">
     @import "viewdetail.css";
     /*body {
@@ -40,16 +43,50 @@ dl dt dd{
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:Image ID="AOLogo" runat="server" ImageURL="~/Images/AOlogo.png"/>        
-        <h2>Contract Detail Viewer</h2>
-        <a href="WebForm1.aspx">Back to search page</a>
+        <asp:Image ID="AOLogo" runat="server" ImageURL="~/Images/AOlogo.png"/>
+
+        <div id="NavigationBar">
+            <h2 id="CRD"><span style="color:#79b9ef">C</span>ontract <span style="color:#79b9ef">R</span>eference <span style="color:#79b9ef">D</span>atabase</h2>      
+            <asp:Menu 
+                ID="Navi" 
+                runat="server" 
+                EnableViewState="false" 
+                Orientation="Horizontal"
+                >
+                <Items>
+                    <asp:MenuItem NavigateUrl="~/disclaimer.aspx" Text="Home" />
+                    <asp:MenuItem NavigateUrl="~/WebForm1.aspx" Text="Search for a Contract" />
+                    <asp:MenuItem NavigateUrl="~/DBEdit.aspx" Text="Edit Contracts" />
+                    <asp:MenuItem NavigateUrl="~/Contact.aspx" Text="Contact" />
+                </Items>
+            </asp:Menu>
+        </div>
+
         <br />
         <br />
-        <div id="subMenu">
-            <asp:Button ID="btnSub1" runat="server" class="btnSubMenu" Text="Details View" color="#fff" OnClick="btnSub1_Click"/>
+        <div id="subNavigationBar">
+            <h2 id="CDV"><span style="color:#79b9ef">C</span>ontract <span style="color:#79b9ef">D</span>etail <span style="color:#79b9ef">V</span>iewer</h2>
+            <asp:Menu 
+                ID="subNavi" 
+                runat="server" 
+                EnabledViewState="false" 
+                Orientation="Horizontal" 
+                OnMenuItemClick="subNavi_MenuItemClick"
+                IncludeStyleBlock="false" 
+                ItemWrap="true"
+                >
+                <StaticMenuItemStyle CssClass="submenutest" />
+                <Items>
+                    <asp:MenuItem Text="Contract Details View" />
+                    <asp:MenuItem Text="Provider Credentialing View" />
+                    <asp:MenuItem Text="Authorization Requirements View" />
+                    <asp:MenuItem Text="Business Office Details View" />
+                </Items>
+            </asp:Menu>
+            <%--<asp:Button ID="btnSub1" runat="server" class="btnSubMenu" Text="Details View" color="#fff" OnClick="btnSub1_Click"/>
             <asp:Button ID="btnSub2" runat="server" class="btnSubMenu" Text="Provider Credentialing View" color="#fff" OnClick="btnSub2_Click"/>
             <asp:Button ID="btnSub3" runat="server" class="btnSubMenu" Text="Authorization Requirements View" color="#fff" OnClick="btnSub3_Click"/>
-            <asp:Button ID="btnSub4" runat="server" class="btnSubMenu" Text="Business Office Details View" color="#fff" OnClick="btnSub4_Click"/>
+            <asp:Button ID="btnSub4" runat="server" class="btnSubMenu" Text="Business Office Details View" color="#fff" OnClick="btnSub4_Click"/>--%>
         </div>               
         <br />
         <br />
@@ -172,16 +209,16 @@ dl dt dd{
                 <asp:BoundField DataField="Contract_Alias2" HeaderText="Contract_Alias2" SortExpression="Contract_Alias2" />
                 <asp:BoundField DataField="Contract_Alias3" HeaderText="Contract_Alias3" SortExpression="Contract_Alias3" />
                 <asp:BoundField DataField="Contract_Alias4" HeaderText="Contract_Alias4" SortExpression="Contract_Alias4" />--%>
-                <asp:CheckBoxField DataField="SVC_OfficeVisits" HeaderText="SVC_OfficeVisits" SortExpression="SVC_OfficeVisits"/>
-                <asp:CheckBoxField DataField="SVC_SX" HeaderText="SVC_SX" SortExpression="SVC_SX"/>
-                <asp:CheckBoxField DataField="SVC_Radiology" HeaderText="SVC_Radiology" SortExpression="SVC_Radiology"/>
-                <asp:CheckBoxField DataField="SVC_PT" HeaderText="SVC_PT" SortExpression="SVC_PT"/>
-                <asp:CheckBoxField DataField="SVC_OT" HeaderText="SVC_OT" SortExpression="SVC_OT"/>
-                <asp:CheckBoxField DataField="SVC_PainMgmt" HeaderText="SVC_PainMgmt" SortExpression="SVC_PainMgmt"/>
-                <asp:CheckBoxField DataField="SVC_DME" HeaderText="SVC_DME" SortExpression="SVC_DME"/>
-                <asp:CheckBoxField DataField="SVC_Podiatry" HeaderText="SVC_Podiatry" SortExpression="SVC_Podiatry"/>
-                <asp:CheckBoxField DataField="SVC_Injections" HeaderText="SVC_Injections" SortExpression="SVC_Injections"/>
-                <asp:BoundField DataField="SVC_Injectibles" HeaderText="SVC_Injectibles" SortExpression="SVC_Injectibles"/>
+                <asp:CheckBoxField DataField="SVC_OfficeVisits" HeaderText="Covered Service: Office Visit" SortExpression="SVC_OfficeVisits"/>
+                <asp:CheckBoxField DataField="SVC_SX" HeaderText="Covered Service: Ortho Surgery" SortExpression="SVC_SX"/>
+                <asp:CheckBoxField DataField="SVC_Radiology" HeaderText="Covered Service: Radiology" SortExpression="SVC_Radiology"/>
+                <asp:CheckBoxField DataField="SVC_PT" HeaderText="Covered Service: Physical Therapy" SortExpression="SVC_PT"/>
+                <asp:CheckBoxField DataField="SVC_OT" HeaderText="Covered Service: Occupational Therapy" SortExpression="SVC_OT"/>
+                <asp:CheckBoxField DataField="SVC_PainMgmt" HeaderText="Covered Service: Pain Management" SortExpression="SVC_PainMgmt"/>
+                <asp:CheckBoxField DataField="SVC_DME" HeaderText="Covered Service: DME" SortExpression="SVC_DME"/>
+                <asp:CheckBoxField DataField="SVC_Podiatry" HeaderText="Covered Service: Podiatry" SortExpression="SVC_Podiatry"/>
+                <asp:CheckBoxField DataField="SVC_Injections" HeaderText="Covered Service: Injections" SortExpression="SVC_Injections"/>
+                <asp:BoundField DataField="SVC_Injectibles" HeaderText="Allowed Injectibles" SortExpression="SVC_Injectibles"/>
                 <%--<asp:BoundField DataField="Auth_ProviderPortal" HeaderText="Auth_ProviderPortal" SortExpression="Auth_ProviderPortal" />
                 <asp:BoundField DataField="Auth_OfficeVisits" HeaderText="Auth_OfficeVisits" SortExpression="Auth_OfficeVisits" />                
                 <asp:BoundField DataField="Auth_OfficeVisits_Note" HeaderText="Auth_OfficeVisits_Note" SortExpression="Auth_OfficeVisits_Note" />
@@ -206,7 +243,7 @@ dl dt dd{
             </Fields>
         </asp:DetailsView>
         <br /><br />
-        <a href="WebForm1.aspx">Back to search page</a>
+        
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DemographicsConnectionString %>" SelectCommand="SELECT * FROM [Contract_Demographics] WHERE ([GUID] = @guide)">
             <SelectParameters>
                 <asp:QueryStringParameter Name="guide" QueryStringField="guid" /><%--Type="Object" /> Commenting this out apparently re-fixed the querystring--%>
