@@ -43,11 +43,11 @@
         </p>--%>
 
         <div id="results">
-            <div id="search">   
+            <div id="search">
+                <i class="glyphicon glyphicon-search" id="searchIcon"></i>  
                 <asp:TextBox ID="txtName" runat="server"  placeholder="Search..."/>
                 <asp:Button CssClass="btn1" runat="server" OnClick="btnSearch_Click" Text="Search" ValidationGroup="Search"/>            
-                <asp:Button CssClass="btn1" runat="server" OnClick="btnViewall_Click" Text="View All" ValidationGroup="OmniView"/>
-                <i class="glyphicon glyphicon-search" id="searchIcon"></i>   
+                <asp:Button CssClass="btn1" runat="server" OnClick="btnViewall_Click" Text="View All" ValidationGroup="OmniView"/> 
             </div>
 
             <asp:RequiredFieldValidator ID="rfvName" runat="server" ControlToValidate="txtName" ErrorMessage="Blank entry, please try again" Display="Dynamic" ValidationGroup="Search"/>            
