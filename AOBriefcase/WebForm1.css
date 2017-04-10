@@ -11,7 +11,6 @@ h2{
 }
 
 h3{
-    position: relative;
     font-size:1.1em;
     font-family:Arial, Helvetica, sans-serif;
     color: #888889;
@@ -37,32 +36,31 @@ input[type=text]{
     background-position: initial; 
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
+    margin: 150px 0;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
 }
 
-input[type=text]:focus {
-    width: 50%;
-}
-
 .btn1{
-    padding: 16px 25px;
+    padding: 15px 25px;
     border: none;
     border-radius: 8px;
+    margin: 0;
     font-family:Arial, Helvetica, sans-serif;
     font-size: 12px;
-    font-weight: bold;
+    font-weight: 700;
     text-align: center;
     cursor: pointer;
     outline: none;
     color: white;
-    background-color: #25477d;
+    background-color: #204072;
 }
 
 .btn1:hover{
     background-color: transparent;
-    color: #fea608;
-    border: 1px solid #fea608
+    color: #79b9ef;
+    border: 2px solid #79b9ef;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #AOLogo{
@@ -74,40 +72,82 @@ input[type=text]:focus {
 
 #CRD{
     position: absolute;
-    right: 5px;
+    margin: 0;
+    right: 15px;
+    top: 50%;
+    transform: translate(0,-50%);
 }
 
 #NavigationBar{
     position: relative;
-    height: 60px;
+    height: 41px;
+    margin: 0;
     background-color: #353535;
 }
 
-#Navi ul li{
-    position: relative;
-    top: 15px;
-    border-radius:0px;
-    height: 45px;
-    width: 200px;
-    font-family:Arial, Helvetica, sans-serif;
-    text-align:center;    
-    padding:15px 12px;
+#NavigationBar a{
+    float: left;
+    display: block;
+    padding: 12px 35px;
     margin: 0;
-    background-color: #25477d;
-    background-repeat: no-repeat;    
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-transform:uppercase;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    overflow: hidden;
+}
+
+#NavigationBar a:hover{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #888889;
+}
+
+/*
+
+#Navi ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+#Navi ul li{
+    float: left;
 }
 
 #Navi ul li a{
-    color:white;
-    font-weight:bold;
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    padding: 11px 20px;
+    margin: 0;
 }
 
-#NavigationBar ul li a.highlight:hover{
-    /*font-weight:bold;*/
-    color: aliceblue;
-    text-decoration:underline;
-    cursor: pointer;
+#Navi ul li a.active{
+    background-color: #79b9ef;
+    color: black;
 }
+
+#Navi ul li a:hover{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+    background-color: #888889;
+    border: 1px solid #fea608;
+
+}
+
+*/
 
 #searchIcon{
     position: relative;
@@ -116,8 +156,15 @@ input[type=text]:focus {
     color: #ccc;
 }
 
+#search{
+    position: absolute;
+    margin: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
 #results{
-    position: center;
-    margin: 100px 100px 100px 100px;
-    font-family:Arial, Helvetica, sans-serif;    
+    margin: 0;
+    font-family:Arial, Helvetica, sans-serif;
 }

@@ -21,13 +21,18 @@
 
         <div id="NavigationBar">
             <h2 id="CRD"><span style="color:#79b9ef">C</span>ontract <span style="color:#79b9ef">R</span>eference <span style="color:#79b9ef">D</span>atabase</h2>      
-            <asp:Menu ID="Navi" runat="server" EnableViewState="false" Orientation="Horizontal">
+            
+            <a href="/disclaimer.aspx">Home</a>
+            <a href="/WebForm1.aspx">Search for a Contract</a>
+            <a href="/DBEdit.aspx">Edit Contracts</a>
+            
+            <%--<asp:Menu ID="Navi" runat="server" EnableViewState="false" Orientation="Horizontal">
                 <Items>
-                    <asp:MenuItem NavigateUrl="~/disclaimer.aspx" Text="Home" />
+                    <asp:MenuItem NavigateUrl="~/disclaimer.aspx" Text="Home"  />
                     <asp:MenuItem NavigateUrl="~/WebForm1.aspx" Text="Search for a Contract" />
                     <asp:MenuItem NavigateUrl="~/DBEdit.aspx" Text="Edit Contracts" />
                 </Items>
-            </asp:Menu>
+            </asp:Menu>--%>
         </div>
 
         <br /><h3>This tool is to help determine if we are contracted with a patient's particular insurance. Please enter all or a portion of the insurance name. You may also enter a known abbreviated name for the insurance (ie. BMG for Beaver Medical Group)</h3>
@@ -38,10 +43,13 @@
         </p>--%>
 
         <div id="results">
-            <i class="glyphicon glyphicon-search" id="searchIcon"></i>      
-            <asp:TextBox ID="txtName" runat="server"  placeholder="Search..."/>
-            <asp:Button CssClass="btn1" runat="server" OnClick="btnSearch_Click" Text="Search" ValidationGroup="Search"/>            
-            <asp:Button CssClass="btn1" runat="server" OnClick="btnViewall_Click" Text="View All" ValidationGroup="OmniView"/>
+            <div id="search">   
+                <asp:TextBox ID="txtName" runat="server"  placeholder="Search..."/>
+                <asp:Button CssClass="btn1" runat="server" OnClick="btnSearch_Click" Text="Search" ValidationGroup="Search"/>            
+                <asp:Button CssClass="btn1" runat="server" OnClick="btnViewall_Click" Text="View All" ValidationGroup="OmniView"/>
+                <i class="glyphicon glyphicon-search" id="searchIcon"></i>   
+            </div>
+
             <asp:RequiredFieldValidator ID="rfvName" runat="server" ControlToValidate="txtName" ErrorMessage="Blank entry, please try again" Display="Dynamic" ValidationGroup="Search"/>            
             <asp:RegularExpressionValidator ID="revName" runat="server" ControlToValidate="txtName" ValidationExpression="^\s*[a-zA-Z,\s]+\s*$" ErrorMessage="Invalid search term, please try again" Display="Dynamic" ValidationGroup="Search"/>
             <asp:PlaceHolder ID="phContractSearch" runat="server" Visible="false">            
