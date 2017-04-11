@@ -21,24 +21,32 @@
 
         <div id="NavigationBar">
             <h2 id="CRD"><span style="color:#79b9ef">C</span>ontract <span style="color:#79b9ef">R</span>eference <span style="color:#79b9ef">D</span>atabase</h2>      
-            <asp:Menu ID="Navi" runat="server" EnableViewState="false" Orientation="Horizontal">
+            <a href="~/disclaimer.aspx">Home</a>
+            <a href="~/WebForm1.aspx">Search for a Contract</a>
+            <a href="~/DBEdit.aspx">Edit Contracts</a>
+            <a href="~/Contact.aspx">Contact</a>
+
+            <%--<asp:Menu ID="Navi" runat="server" EnableViewState="false" Orientation="Horizontal">
                 <Items>
                     <asp:MenuItem NavigateUrl="~/disclaimer.aspx" Text="Home" />
                     <asp:MenuItem NavigateUrl="~/WebForm1.aspx" Text="Search for a Contract" />
                     <asp:MenuItem NavigateUrl="~/DBEdit.aspx" Text="Edit Contracts" />
                     <asp:MenuItem NavigateUrl="~/Contact.aspx" Text="Contact" />
                 </Items>
-            </asp:Menu>
+            </asp:Menu>--%>
         </div>
 
         <br />
         <h3>This tool is to help determine if we are contracted with a patient's particular insurance. Please enter all or a portion of the insurance name. You may also enter a known abbreviated name for the insurance (ie. BMG for Beaver Medical Group)</h3>
         
         <div id="results">
-            <i class="glyphicon glyphicon-search" id="searchIcon"></i>      
-            <asp:TextBox ID="txtName" runat="server"  placeholder="Search..."/>
-            <asp:Button CssClass="btn1" runat="server" OnClick="btnSearch_Click" Text="Search" ValidationGroup="Search"/>            
-            <asp:Button CssClass="btn1" runat="server" OnClick="btnViewall_Click" Text="View All" ValidationGroup="OmniView"/>
+            <div id="search">
+                <i class="glyphicon glyphicon-search" id="searchIcon"></i>      
+                <asp:TextBox ID="txtName" runat="server"  placeholder="Search..."/>
+                <asp:Button CssClass="btn1" runat="server" OnClick="btnSearch_Click" Text="Search" ValidationGroup="Search"/>            
+                <asp:Button CssClass="btn1" runat="server" OnClick="btnViewall_Click" Text="View All" ValidationGroup="OmniView"/>
+            </div>
+
             <asp:RequiredFieldValidator ID="rfvName" runat="server" ControlToValidate="txtName" ErrorMessage="Blank entry, please try again" Display="Dynamic" ValidationGroup="Search"/>            
             <asp:RegularExpressionValidator ID="revName" runat="server" ControlToValidate="txtName" ValidationExpression="^\s*[a-zA-Z,\s]+\s*$" ErrorMessage="Invalid search term, please try again" Display="Dynamic" ValidationGroup="Search"/>
         </div>
@@ -67,17 +75,56 @@
     border-width: thick;
     border-radius: 10px;    
 }--%>
-        <div id="hintBox"> 
-            <h3>Important Terminology!</h3>
-            <h4>HMO</h4>
-                <h5>"Health Management Organization" A brief description about HMOs will be entered here. <%--This type of health plan generally requires patients to obtain care from medical service providers who are both contracted and credentialed with the health plan in order to be eligible for coverage. Nearly all services covered by an HMO require authorization to be obtained.--%></h5>
-            <h4>PPO</h4>
-                <h5>"Preferred Provider Organization" A brief description about PPOs will be entered here. </h5>
-            <h4>MPN</h4>
-                <h5>"Medical Provider Network" A brief description about MPNs will be entered here.</h5>
+        <!-- Trigger/Open The Modal -->
+        <button id="myBtn">Open Modal</button>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+
+                <div id="hintBox"> 
+                    <h3>Important Terminology!</h3>
+                    <h4>HMO</h4>
+                    <h5>"Health Management Organization" This type of health plan generally requires patients to obtain care from medical service providers who are both contracted and credentialed with the health plan in order to be eligible for coverage. Nearly all services covered by an HMO require authorization to be obtained.--%></h5>
+                    <h4>PPO</h4>
+                    <h5>"Preferred Provider Organization" A brief description about PPOs will be entered here. </h5>
+                    <h4>MPN</h4>
+                    <h5>"Medical Provider Network" A brief description about MPNs will be entered here.</h5>
+                </div>
+            </div>
         </div>
         
         <asp:SqlDataSource ID="Demographics" runat="server" ConnectionString="<%$ ConnectionStrings:DemographicsConnectionString %>" SelectCommand="SELECT * FROM [Contract_Demographics]"></asp:SqlDataSource>
     </form>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById('myModal');
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
