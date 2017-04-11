@@ -48,7 +48,7 @@
             Width="400px" 
             Visible="False" 
             RowStyle-Wrap="false"
-            HeaderText="[Contract Name Here]: Edit Interface"
+            HeaderText="Edit Interface"
             Gridlines="None"
             CssClass="viewer"
             HeaderStyle-CssClass="detailheader"
@@ -71,11 +71,63 @@
                 <asp:BoundField DataField="Contract_Alias4" HeaderText="Contract_Alias4" SortExpression="Contract_Alias4" />
                 <asp:BoundField DataField="Contract_Type" HeaderText="Contract_Type" SortExpression="Contract_Type" />
                 <asp:BoundField DataField="Contract_Parent" HeaderText="Contract_Parent" SortExpression="Contract_Parent" />
-                <asp:BoundField DataField="Contract_FC" HeaderText="Contract_FC" SortExpression="Contract_FC" />
+                <asp:TemplateField HeaderText="Contract_FC" SortExpression="Contract_FC">
+                    <EditItemTemplate>
+                        <asp:DropDownList 
+                            ID="DropDownList1" 
+                            runat="server" 
+                            DataSourceID="FC_DataSource1" 
+                            DataTextField="FinancialClass_Name" 
+                            DataValueField="FinancialClass_Name" 
+                            SelectedValue='<%# Bind("FinancialClass_Name") %>'
+                            >
+                        </asp:DropDownList>
+                    </EditItemTemplate>
+                    <InsertItemTemplate>
+                        <asp:DropDownList 
+                            ID="DropDownList1" 
+                            runat="server" 
+                            DataSourceID="FC_DataSource1" 
+                            DataTextField="FinancialClass_Name" 
+                            DataValueField="FinancialClass_Name" 
+                            SelectedValue='<%# Bind("FinancialClass_Name") %>'
+                            >
+                        </asp:DropDownList>
+                    </InsertItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="Label2" runat="server" Text='<%# Bind("Contract_FC") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
                 <asp:BoundField DataField="Contract_UpdateDate" HeaderText="Contract_UpdateDate" SortExpression="Contract_UpdateDate" />
                 <asp:BoundField DataField="Contract_TerminateDate" HeaderText="Contract_TerminateDate" SortExpression="Contract_TerminateDate" />
                 <asp:BoundField DataField="Contract_EffectiveDate" HeaderText="Contract_EffectiveDate" SortExpression="Contract_EffectiveDate" />
-                <asp:BoundField DataField="Contract_Status" HeaderText="Contract_Status" SortExpression="Contract_Status" />
+                <asp:TemplateField HeaderText="Contract_Status" SortExpression="Contract_Status">
+                    <EditItemTemplate>
+                        <asp:DropDownList 
+                            ID="DropDownList2" 
+                            runat="server" 
+                            DataSourceID="Status_DataSource1" 
+                            DataTextField="ContractStatus_Name" 
+                            DataValueField="ContractStatus_Name" 
+                            SelectedValue='<%# Bind("Contract_Status") %>'
+                            >
+                        </asp:DropDownList>
+                    </EditItemTemplate>
+                    <InsertItemTemplate>
+                        <asp:DropDownList 
+                            ID="DropDownList2" 
+                            runat="server" 
+                            DataSourceID="Status_DataSource1" 
+                            DataTextField="ContractStatus_Name" 
+                            DataValueField="ContractStatus_Name" 
+                            SelectedValue='<%# Bind("Contract_Status") %>'
+                            >
+                        </asp:DropDownList>
+                    </InsertItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="Label3" runat="server" Text='<%# Bind("Contract_Status") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
                 <asp:BoundField DataField="Contract_Homepage" HeaderText="Contract_Homepage" SortExpression="Contract_Homepage" />
                 <asp:BoundField DataField="Contract_Phone" HeaderText="Contract_Phone" SortExpression="Contract_Phone" />                
                 <asp:TemplateField HeaderText="Contract_PDF" SortExpression="Contract_PDF">
@@ -353,6 +405,18 @@
                 <asp:Parameter Name="Auth_Injections_Note" Type="String" />
                 <%--<asp:Parameter Name="ContractID" Type="Int32" />--%>
             </UpdateParameters>
+        </asp:SqlDataSource>
+        <asp:SqlDataSource
+            ID="FC_DataSource1"
+            runat="server"
+            ConnectionString="<%$ ConnectionStrings:DemographicsConnectionString %>"
+            SelectCommand="SELECT [FinancialClass_Name] FROM FinancialClass_lookup">
+        </asp:SqlDataSource>
+        <asp:SqlDataSource
+            ID="Status_DataSource1"
+            runat="server"
+            ConnectionString="<%$ ConnectionStrings:DemographicsConnectionString %>"
+            SelectCommand="SELECT [ContractStatus_Name] FROM ContractStatus_lookup">
         </asp:SqlDataSource>
     </form>
 </body>

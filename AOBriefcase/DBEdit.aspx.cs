@@ -47,7 +47,7 @@ namespace AOBriefcase
             int viewIndex = GridView1.SelectedIndex;
             int DetailIndex = viewPage + viewIndex;
             DetailsView1.PageIndex = DetailIndex;
-            StatusLabel1.Text = "Detailed View enabled.";
+            StatusLabel1.Text = "Editing interface opened for:";
             StatusLabel1.Visible = true;
             btnEditCred.Visible = true;
         }

@@ -23,10 +23,10 @@
             <h2 id="CRD"><span style="color:#79b9ef">C</span>ontract <span style="color:#79b9ef">R</span>eference <span style="color:#79b9ef">D</span>atabase</h2>      
             <asp:Menu ID="Navi" runat="server" EnableViewState="false" Orientation="Horizontal">
                 <Items>
-                    <asp:MenuItem NavigateUrl="~/disclaimer.aspx" Text="Home" />
+                    <asp:MenuItem NavigateUrl="~/disclaimer.aspx" Text="Home" />                    
                     <asp:MenuItem NavigateUrl="~/WebForm1.aspx" Text="Search for a Contract" />
                     <asp:MenuItem NavigateUrl="~/DBEdit.aspx" Text="Edit Contracts" />
-                    <asp:MenuItem NavigateUrl="~/Contact.aspx" Text="Contact" />
+                    <asp:MenuItem NavigateUrl="~/Contacts.aspx" Text="Contact Page" />
                 </Items>
             </asp:Menu>
         </div>

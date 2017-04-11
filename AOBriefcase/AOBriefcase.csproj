@@ -96,6 +96,8 @@
   <ItemGroup>
     <Content Include="Admin.aspx" />
     <Content Include="AttachmentInterface.aspx" />
+    <Content Include="Contacts.aspx" />
+    <Content Include="Contacts.css" />
     <Content Include="DBEdit.aspx" />
     <Content Include="DBEdit.css" />
     <Content Include="disclaimer.aspx" />
@@ -150,6 +152,13 @@
     </Compile>
     <Compile Include="AttachmentInterface.aspx.designer.cs">
       <DependentUpon>AttachmentInterface.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contacts.aspx.cs">
+      <DependentUpon>Contacts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contacts.aspx.designer.cs">
+      <DependentUpon>Contacts.aspx</DependentUpon>
     </Compile>
     <Compile Include="ContractDirectory.cs" />
     <Compile Include="DBEdit.aspx.cs">
