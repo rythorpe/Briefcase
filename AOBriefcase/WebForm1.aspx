@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="WebForm1.css" type="text/css"/>
 <%--<style type="text/css" media="screen">
     @import "WebForm1.css";
-</style>--%> <%--Why did we do it this way?????????????????????????????????????--%>
+</style>--%> <%--Why did we do it this way?--%>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -21,10 +21,10 @@
 
         <div id="NavigationBar">
             <h2 id="CRD"><span style="color:#79b9ef">C</span>ontract <span style="color:#79b9ef">R</span>eference <span style="color:#79b9ef">D</span>atabase</h2>      
-            <a href="~/disclaimer.aspx">Home</a>
-            <a href="~/WebForm1.aspx">Search for a Contract</a>
-            <a href="~/DBEdit.aspx">Edit Contracts</a>
-            <a href="~/Contact.aspx">Contact</a>
+            <a href="/disclaimer.aspx">Home</a>
+            <a href="/WebForm1.aspx">Search for a Contract</a>
+            <a href="/DBEdit.aspx">Edit Contracts</a>
+            <a href="/Contact.aspx">Contact</a>
 
             <%--<asp:Menu ID="Navi" runat="server" EnableViewState="false" Orientation="Horizontal">
                 <Items>
@@ -47,8 +47,12 @@
                 <asp:Button CssClass="btn1" runat="server" OnClick="btnViewall_Click" Text="View All" ValidationGroup="OmniView"/>
             </div>
 
-            <asp:RequiredFieldValidator ID="rfvName" runat="server" ControlToValidate="txtName" ErrorMessage="Blank entry, please try again" Display="Dynamic" ValidationGroup="Search"/>            
-            <asp:RegularExpressionValidator ID="revName" runat="server" ControlToValidate="txtName" ValidationExpression="^\s*[a-zA-Z,\s]+\s*$" ErrorMessage="Invalid search term, please try again" Display="Dynamic" ValidationGroup="Search"/>
+            <div id="errorMsg">
+                <asp:RequiredFieldValidator ID="rfvName" runat="server" ControlToValidate="txtName" ErrorMessage="Blank entry, please try again" Display="Dynamic" ValidationGroup="Search"/>            
+                <asp:RegularExpressionValidator ID="revName" runat="server" ControlToValidate="txtName" ValidationExpression="^\s*[a-zA-Z,\s]+\s*$" ErrorMessage="Invalid search term, please try again" Display="Dynamic" ValidationGroup="Search"/>
+            </div>
+           
+            <button id="btn2" type="button">Terminology Help</button> <!-- Open the hint box modal -->
         </div>
 
         <div id="searchResults">
@@ -75,24 +79,21 @@
     border-width: thick;
     border-radius: 10px;    
 }--%>
-        <!-- Trigger/Open The Modal -->
-        <button id="myBtn">Open Modal</button>
+       
 
         <!-- The Modal -->
         <div id="myModal" class="modal">
             <!-- Modal content -->
-            <div class="modal-content">
-                <span class="close">&times;</span>
+            <div class="hintBox">
+                <span class="closeBtn">&times;</span>
 
-                <div id="hintBox"> 
-                    <h3>Important Terminology!</h3>
-                    <h4>HMO</h4>
-                    <h5>"Health Management Organization" This type of health plan generally requires patients to obtain care from medical service providers who are both contracted and credentialed with the health plan in order to be eligible for coverage. Nearly all services covered by an HMO require authorization to be obtained.--%></h5>
-                    <h4>PPO</h4>
-                    <h5>"Preferred Provider Organization" A brief description about PPOs will be entered here. </h5>
-                    <h4>MPN</h4>
-                    <h5>"Medical Provider Network" A brief description about MPNs will be entered here.</h5>
-                </div>
+                <div id="hbHeading">Important Terminology</div>
+                <h4>HMO</h4>
+                <h5>"Health Management Organization" This type of health plan generally requires patients to obtain care from medical service providers who are both contracted and credentialed with the health plan in order to be eligible for coverage. Nearly all services covered by an HMO require authorization to be obtained.</h5>
+                <h4>PPO</h4>
+                <h5>"Preferred Provider Organization" A brief description about PPOs will be entered here. </h5>
+                <h4>MPN</h4>
+                <h5>"Medical Provider Network" A brief description about MPNs will be entered here.</h5>
             </div>
         </div>
         
@@ -104,10 +105,10 @@
         var modal = document.getElementById('myModal');
 
         // Get the button that opens the modal
-        var btn = document.getElementById("myBtn");
+        var btn = document.getElementById("btn2");
 
         // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
+        var span = document.getElementsByClassName("closeBtn")[0];
 
         // When the user clicks the button, open the modal 
         btn.onclick = function () {
