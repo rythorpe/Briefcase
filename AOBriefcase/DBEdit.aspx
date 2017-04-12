@@ -16,6 +16,14 @@
         <asp:Label ID="Label1" ForeColor="Red" runat="server" Visible="false"/>
         <a href="WebForm1.aspx">Back to search page</a>
         <br />
+        <asp:LoginView ID="LoginView1" runat="server">
+            <AnonymousTemplate>
+                Your session has not yet been authenticated. Please login to access the contract editors.
+            </AnonymousTemplate>
+            <LoggedInTemplate>
+                Administration account authenticated. Access to contract editors enabled.
+            </LoggedInTemplate>
+        </asp:LoginView>
         <br />
         Welcome
         <asp:LoginName ID="LoginName2" runat="server" Font-Bold ="true" />                        

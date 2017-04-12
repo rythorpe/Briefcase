@@ -17,6 +17,16 @@
         <h2>Contract Billing/Collections Details</h2>
         <a href="WebForm1.aspx">Back to search page</a>
         <br />
+
+        <asp:LoginView ID="LoginView1" runat="server">
+            <AnonymousTemplate>
+                Your session has not yet been authenticated. Please login to access the contract editors.
+            </AnonymousTemplate>
+            <LoggedInTemplate>
+                Administration account authenticated. Access to contract editors enabled.
+            </LoggedInTemplate>
+        </asp:LoginView>
+
         <br />
         <div id="subMenu">
             <asp:Button ID="btnSub1" runat="server" class="btnSubMenu" Text="Details View" color="#fff" OnClick="btnSub1_Click"/>

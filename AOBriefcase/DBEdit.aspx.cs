@@ -25,13 +25,13 @@ namespace AOBriefcase
             {
                 FormsAuthentication.RedirectToLoginPage();
             }
-            if (!Page.IsPostBack)
+            if (Context.User.IsInRole("Admin"))
             {
                 Response.Write("User Authenticated");
             }
             else
             {
-                Response.Write("");
+                Response.Write("Non-Admin authentication detected");
             }            
         }
                

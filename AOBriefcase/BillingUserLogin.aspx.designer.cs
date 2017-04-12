@@ -10,7 +10,7 @@
 namespace AOBriefcase {
     
     
-    public partial class viewbilling {
+    public partial class BillingUserLogin {
         
         /// <summary>
         /// form1 control.
@@ -31,39 +31,30 @@ namespace AOBriefcase {
         protected global::System.Web.UI.WebControls.Image AOLogo;
         
         /// <summary>
-        /// btnSub1 control.
+        /// Navi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSub1;
+        protected global::System.Web.UI.WebControls.Menu Navi;
         
         /// <summary>
-        /// btnSub2 control.
+        /// Login1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSub2;
+        protected global::System.Web.UI.WebControls.Login Login1;
         
         /// <summary>
-        /// btnSub3 control.
+        /// ValidationSummary1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSub3;
-        
-        /// <summary>
-        /// btnSub4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSub4;
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
     }
 }
