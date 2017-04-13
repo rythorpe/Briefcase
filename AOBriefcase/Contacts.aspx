@@ -26,6 +26,13 @@
             </Items>
         </asp:Menu>
     </div>
+
+    <div id="Contents">
+        <p>For questions regarding contract information, please contact:</p>
+        <p>For questions regarding credentialing information, please contact:</p>
+        <p>For questions regarding billing/collection information regarding contracts, please contact:</p>
+        <p>To report issues with this web application, please contact:</p>
+    </div>
     </form>
 </body>
 </html>
