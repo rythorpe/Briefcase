@@ -96,6 +96,9 @@
   <ItemGroup>
     <Content Include="Admin.aspx" />
     <Content Include="AttachmentInterface.aspx" />
+    <Content Include="BillingUserLogin.aspx" />
+    <Content Include="Contacts.aspx" />
+    <Content Include="Contacts.css" />
     <Content Include="DBEdit.aspx" />
     <Content Include="DBEdit.css" />
     <Content Include="disclaimer.aspx" />
@@ -107,11 +110,12 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="PathResolution.aspx" />
     <Content Include="ProviderEdit.aspx" />
     <Content Include="ProviderEdit.css" />
     <Content Include="Site1.css" />
     <Content Include="viewauthreq.css" />
-    <Content Include="viewbilling.aspx" />
+    <Content Include="BillingOnly\viewbilling.aspx" />
     <Content Include="viewcredentialing.css" />
     <Content Include="WebForm1.css" />
     <None Include="Properties\PublishProfiles\Beta.pubxml" />
@@ -153,6 +157,20 @@
     <Compile Include="AttachmentInterface.aspx.designer.cs">
       <DependentUpon>AttachmentInterface.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BillingUserLogin.aspx.cs">
+      <DependentUpon>BillingUserLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BillingUserLogin.aspx.designer.cs">
+      <DependentUpon>BillingUserLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contacts.aspx.cs">
+      <DependentUpon>Contacts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contacts.aspx.designer.cs">
+      <DependentUpon>Contacts.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ContractDirectory.cs" />
     <Compile Include="DBEdit.aspx.cs">
       <DependentUpon>DBEdit.aspx</DependentUpon>
@@ -167,6 +185,13 @@
     </Compile>
     <Compile Include="disclaimer.aspx.designer.cs">
       <DependentUpon>disclaimer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PathResolution.aspx.cs">
+      <DependentUpon>PathResolution.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PathResolution.aspx.designer.cs">
+      <DependentUpon>PathResolution.aspx</DependentUpon>
     </Compile>
     <Compile Include="PlaceholderPage.aspx.cs">
       <DependentUpon>PlaceholderPage.aspx</DependentUpon>
@@ -183,6 +208,7 @@
     <Compile Include="ProviderEdit.aspx.designer.cs">
       <DependentUpon>ProviderEdit.aspx</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -190,6 +216,9 @@
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
     </Compile>
+=======
+    <Compile Include="RoleManager.cs" />
+>>>>>>> a31724e9af1c1717923fe1cdc2134c0b99a5d524
     <Compile Include="viewauthreq.aspx.cs">
       <DependentUpon>viewauthreq.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -197,11 +226,11 @@
     <Compile Include="viewauthreq.aspx.designer.cs">
       <DependentUpon>viewauthreq.aspx</DependentUpon>
     </Compile>
-    <Compile Include="viewbilling.aspx.cs">
+    <Compile Include="BillingOnly\viewbilling.aspx.cs">
       <DependentUpon>viewbilling.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="viewbilling.aspx.designer.cs">
+    <Compile Include="BillingOnly\viewbilling.aspx.designer.cs">
       <DependentUpon>viewbilling.aspx</DependentUpon>
     </Compile>
     <Compile Include="viewcredentialing.aspx.cs">
@@ -226,6 +255,7 @@
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

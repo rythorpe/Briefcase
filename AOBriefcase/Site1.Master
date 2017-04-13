@@ -22,7 +22,7 @@
                 <a href="/disclaimer.aspx">Home</a>
                 <a href="/WebForm1.aspx">Search for a Contract</a>
                 <a href="/DBEdit.aspx">Edit Contracts</a>
-                <a href="/Contact.aspx">Contact</a>
+                <a href="/Contacts.aspx">Contact</a>
 
                 <%--<asp:Menu ID="Navi" runat="server" EnableViewState="false" Orientation="Horizontal">
                     <Items>

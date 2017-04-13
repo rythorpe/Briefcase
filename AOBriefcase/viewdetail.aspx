@@ -54,9 +54,9 @@ dl dt dd{
                 Orientation="Horizontal"
                 >
                 <Items>
-                    <asp:MenuItem NavigateUrl="~/disclaimer.aspx" Text="Home" />
-                    <asp:MenuItem NavigateUrl="~/WebForm1.aspx" Text="Search for a Contract" />
-                    <asp:MenuItem NavigateUrl="~/DBEdit.aspx" Text="Edit Contracts" />
+                    <asp:MenuItem NavigateUrl="~/disclaimer.aspx" Text="Home " />                    
+                    <asp:MenuItem NavigateUrl="~/WebForm1.aspx" Text="Search for a Contract " />                    
+                    <asp:MenuItem NavigateUrl="~/DBEdit.aspx" Text="Edit Contracts " />                    
                     <asp:MenuItem NavigateUrl="~/Contact.aspx" Text="Contact" />
                 </Items>
             </asp:Menu>
@@ -72,14 +72,18 @@ dl dt dd{
                 EnabledViewState="false" 
                 Orientation="Horizontal" 
                 OnMenuItemClick="subNavi_MenuItemClick"
-                IncludeStyleBlock="false" 
-                ItemWrap="true"
+                IncludeStyleBlock="true" 
+                ItemWrap="true"                
                 >
-                <StaticMenuItemStyle CssClass="submenutest" />
+                <%--<StaticMenuItemStyle CssClass="submenutest" />--%>
+                <StaticSelectedStyle CssClass="submenutest" />
                 <Items>
-                    <asp:MenuItem Text="Contract Details View" />
+                    <asp:MenuItem Text="Contract Details View" Selected="true"/>
+                    <asp:MenuItem Selectable="false" Text=" | " />
                     <asp:MenuItem Text="Provider Credentialing View" />
+                    <asp:MenuItem Selectable="false" Text=" | " />
                     <asp:MenuItem Text="Authorization Requirements View" />
+                    <asp:MenuItem Selectable="false" Text=" | " />
                     <asp:MenuItem Text="Business Office Details View" />
                 </Items>
             </asp:Menu>

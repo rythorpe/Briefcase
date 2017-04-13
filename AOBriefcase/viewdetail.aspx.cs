@@ -82,7 +82,7 @@ namespace AOBriefcase
         {
             Guid btnViewGuid = Guid.Empty;
             Guid.TryParse(Request.QueryString["GUID"], out btnViewGuid);
-            Response.Redirect("~/PlaceholderPage.aspx?guid=" + btnViewGuid);
+            Response.Redirect("~/BillingOnly/viewbilling.aspx?guid=" + btnViewGuid);
         }
 
         protected void subNavi_MenuItemClick(object sender, MenuEventArgs e)

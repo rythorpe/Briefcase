@@ -166,14 +166,15 @@ dl dt dd{
 #subNavigationBar{
     position: relative;
     height: 60px;
-    background-color: #353535;
+    /*background-color: #353535;*/
+    background-color:#383f49;
 }
 #subNavi ul li{    
     position: relative;
     top: 15px;
     border-radius:0px;
     height: 55px;
-    width: 175px;
+    /*width: 240px;*/
     font-family:Arial, Helvetica, sans-serif;
     text-align:center;        
     padding:15px 12px;
@@ -188,15 +189,21 @@ dl dt dd{
     vertical-align:central;    
 }
 
-#subNavigationBar ul li a.highlight:hover{
+#subNavi ul li a.highlight:hover{
     /*font-weight:bold;*/
     color: aliceblue;
     text-decoration:underline;
     cursor: pointer;
 }
-.submenutest{
-    white-space:normal;
+
+#subNavi a.static.selected{
+    color:aqua;
+    background:aqua;
 }
+/*.submenutest{    
+    color:aqua !important;
+    background-color:aqua !important;
+}*/
 
 .viewer{
     width:100%;

@@ -92,6 +92,7 @@
         <asp:GridView 
             ID="GridView1" 
             runat="server" 
+            Width="100%"
             AutoGenerateColumns="False" 
             DataSourceID="SqlDataSource2"
             Gridlines="None"
@@ -103,13 +104,14 @@
             >
             <Columns>
                 <%--<asp:BoundField DataField="ProviderID" HeaderText="ProviderID" SortExpression="ProviderID" />--%>
-                <asp:BoundField DataField="Provider_FullName" HeaderText="Provider" SortExpression="Provider_FullName" ItemStyle-Width="50%"/>
-                <asp:BoundField DataField="Credentialing_Status" HeaderText="Status" SortExpression="Credentialing_Status" ItemStyle-Width="25%"/>
-                <asp:BoundField DataField="Credentialing_EffectiveDate" HeaderText="Effective Date" SortExpression="Credentialing_EffectiveDate" ItemStyle-Width="25%" />
+                <asp:BoundField DataField="Provider_FullName" HeaderText="Provider" SortExpression="Provider_FullName" ItemStyle-Width="20%"/>
+                <asp:BoundField DataField="Credentialing_Status" HeaderText="Status" SortExpression="Credentialing_Status" ItemStyle-Width="15%"/>
+                <asp:BoundField DataField="Credentialing_EffectiveDate" HeaderText="Effective Date" SortExpression="Credentialing_EffectiveDate" ItemStyle-Width="15%" />
+                <asp:BoundField DataField="Credentialing_Comment" HeaderText="Comments" SortExpression="Credentialing_Comment" ItemStyle-Width="70%"/>
                 <%--<asp:BoundField DataField="GUID" HeaderText="GUID" SortExpression="GUID" />--%>
             </Columns>
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [ProviderID], [Provider_FullName], [Credentialing_Status], [Credentialing_EffectiveDate], [GUID] FROM [Contract_Demographics] AS Base JOIN [ProviderContract_junction] AS Beta ON Base.[ContractID] = Beta.[ContractID] JOIN [ProviderList] AS Alpha ON [ProviderListID] = [ProviderID] WHERE [GUID] = @guid AND [Provider_Status] = 1">
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [ProviderID], [Provider_FullName], [Credentialing_Status], [Credentialing_EffectiveDate], [Credentialing_Comment], [GUID] FROM [Contract_Demographics] AS Base JOIN [ProviderContract_junction] AS Beta ON Base.[ContractID] = Beta.[ContractID] JOIN [ProviderList] AS Alpha ON [ProviderListID] = [ProviderID] WHERE [GUID] = @guid AND [Provider_Status] = 1">
             <SelectParameters>
                 <asp:QueryStringParameter Name="guid" QueryStringField="guid" />
             </SelectParameters>
