@@ -1,0 +1,49 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="AOBriefcase.Site1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>AO Contract Reference Database Master</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/x-icon" href="~/Images/favicon.ico" runat="server"/>
+    <link rel="icon" type="image/ico" href="~/Images/favicon.ico" runat="server"/>
+    <link rel="stylesheet" href="Site1.css" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="topContent">
+            <asp:Image id="AOLogo" runat="server" ImageURL="~/Images/AOlogo.png" />
+
+            <div id="NavigationBar">
+                <h2 id="CRD"><span style="color:#79b9ef">C</span>ontract <span style="color:#79b9ef">R</span>eference <span style="color:#79b9ef">D</span>atabase</h2>      
+                <a href="/disclaimer.aspx">Home</a>
+                <a href="/WebForm1.aspx">Search for a Contract</a>
+                <a href="/DBEdit.aspx">Edit Contracts</a>
+                <a href="/Contact.aspx">Contact</a>
+
+                <%--<asp:Menu ID="Navi" runat="server" EnableViewState="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/disclaimer.aspx" Text="Home" />
+                        <asp:MenuItem NavigateUrl="~/WebForm1.aspx" Text="Search for a Contract" />
+                        <asp:MenuItem NavigateUrl="~/DBEdit.aspx" Text="Edit Contracts" />
+                        <asp:MenuItem NavigateUrl="~/Contact.aspx" Text="Contact" />
+                    </Items>
+                </asp:Menu>--%>
+            <br />
+            </div>
+        </div>
+
+        <div id="mainContent">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <div id="bottomContent">
+            <asp:Image id="footerImg" runat="server" ImageURL="~/Images/AOlogo_02.png" />
+        </div>
+    </form>
+</body>
+</html>

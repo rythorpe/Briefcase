@@ -1,0 +1,67 @@
+﻿body {
+}
+
+h2{
+    font-size:1.4em;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#888889;
+    background-color:transparent;
+    width: auto;
+    right: 30px;
+}
+
+#AOLogo{
+    position: relative;
+    width: 350px;
+    height: auto;
+    margin: 10px 0px;
+}
+
+#CRD{
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translate(0,-50%);
+    margin: 0;
+}
+
+#NavigationBar{
+    position: relative;
+    height: 42px;
+    background-color: #353535;
+    overflow: hidden;
+}
+
+#NavigationBar a{
+    display: block;
+    float: left;
+    font-family:Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 13px;
+    text-decoration: none;
+    font-weight:600;
+    text-transform: uppercase;
+    text-align:center;    
+    padding:12px 18px;
+    margin: 0;
+}
+
+#NavigationBar a:hover{
+    background-color: #888889;
+}
+
+#bottomContent{
+    position: absolute;
+    bottom: 0;
+    height: 20px;
+    width: auto;
+}
+
+#footerImg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width:30px;
+    height: auto;
+}
