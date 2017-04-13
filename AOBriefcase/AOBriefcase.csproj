@@ -208,7 +208,6 @@
     <Compile Include="ProviderEdit.aspx.designer.cs">
       <DependentUpon>ProviderEdit.aspx</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -216,9 +215,6 @@
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
     </Compile>
-=======
-    <Compile Include="RoleManager.cs" />
->>>>>>> a31724e9af1c1717923fe1cdc2134c0b99a5d524
     <Compile Include="viewauthreq.aspx.cs">
       <DependentUpon>viewauthreq.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
