@@ -50,18 +50,13 @@ h2{
     background-color: #888889;
 }
 
+#mainContent{
+    margin: 15px 0 0 0;
+}
+
 #bottomContent{
     position: absolute;
     bottom: 0;
-    height: 20px;
-    width: auto;
-}
-
-#footerImg{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    width:30px;
-    height: auto;
+    height: 60px;
+    width: 100%;
 }

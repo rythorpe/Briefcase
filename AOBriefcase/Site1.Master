@@ -42,7 +42,6 @@
         </div>
 
         <div id="bottomContent">
-            <asp:Image id="footerImg" runat="server" ImageURL="~/Images/AOlogo_02.png" />
         </div>
     </form>
 </body>
