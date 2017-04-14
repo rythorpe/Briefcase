@@ -9,29 +9,30 @@
 
 <asp:Content ID="stuff_2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h3>This tool is to help determine if we are contracted with a patient's particular insurance. Please enter all or a portion of the insurance name. You may also enter a known abbreviated name for the insurance (ie. BMG for Beaver Medical Group)</h3>
+    <h3><b>This tool is to help determine if we are contracted with a patient's particular insurance. Please enter all or a portion of the insurance name. You may also enter a known abbreviated name for the insurance (ie. BMG for Beaver Medical Group)</b></h3>
         
     <div id="results">
         <div id="search">
             <i class="glyphicon glyphicon-search" id="searchIcon"></i>      
             <asp:TextBox ID="txtName" runat="server" placeholder="Search..." />
             <asp:Button CssClass="btn1" runat="server" OnClick="btnSearch_Click" Text="Search" ValidationGroup="Search"/>            
-            <asp:Button CssClass="btn1" runat="server" OnClick="btnViewall_Click" Text="View All" ValidationGroup="OmniView"/>
+            <asp:Button CssClass="btn1" runat="server" OnClick="btnViewall_Click" Text="View All" ValidationGroup="OmniView"/>            
         </div>
 
         <div id="errorMsg">
+            <button id="btn2" type="button">Terminology Help</button>
             <asp:RequiredFieldValidator ID="rfvName" runat="server" ControlToValidate="txtName" ErrorMessage="Blank entry, please try again" Display="Dynamic" ValidationGroup="Search"/>            
             <asp:RegularExpressionValidator ID="revName" runat="server" ControlToValidate="txtName" ValidationExpression="^\s*[a-zA-Z,\s]+\s*$" ErrorMessage="Invalid search term, please try again" Display="Dynamic" ValidationGroup="Search"/>
         </div>
            
-        <button id="btn2" type="button">Terminology Help</button> <!-- Open the hint box modal -->
+        <!--<button id="btn2" type="button">Terminology Help</button>--> <!-- Open the hint box modal -->
     </div>
 
     <div id="searchResults">
         <asp:PlaceHolder ID="phContractSearch" runat="server" Visible="false">            
             <asp:Repeater ID="rpContractSearchView" runat="server" >
                 <ItemTemplate>
-                    <p><asp:HyperLink ID="h1Link" runat="server" NavigateUrl='<%#Eval("guid", "viewdetail.aspx?guid={0}") %>' Text='<%#Eval("AOCode")%>'/></p>
+                    <p><b><asp:HyperLink ID="h1Link" runat="server" NavigateUrl='<%#Eval("guid", "viewdetail.aspx?guid={0}") %>' Text='<%#Eval("AOCode")%>'/></b></p>
                 </ItemTemplate>
             </asp:Repeater>
         </asp:PlaceHolder>

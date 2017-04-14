@@ -4,7 +4,8 @@ h3{
     position: relative;
     font-size:1.1em;
     font-family:Arial, Helvetica, sans-serif;
-    color: #888889;
+    color:black;
+    /*color: #888889;*/
     background-color:transparent;
     width: auto;
     margin: 2px 15px;
@@ -91,27 +92,29 @@ input[type=text]{
 }
 
 #search{
-    position: absolute;
+    /*position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    left: 25%;
+    transform: translate(-50%,-50%);*/        
 }
 
 #errorMsg{
-    position: absolute;
+    /*position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     margin: 40px 0px 0px 0px;
-    padding: 0;
+    padding: 0;*/
 }
 
 #btn2{
-    position: absolute;
+    /*position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    margin: 60px 0px 0px 0px;
+    left: 50%;*/
+    /*transform: translate(-50%,-50%);
+    margin: 60px 0px 0px 0px;*/
+    display:block;
+    margin:auto;
     padding: 0;
     border: none;
     font-family:Arial, Helvetica, sans-serif;
@@ -125,10 +128,16 @@ input[type=text]{
 
 #results{
     position: center;
-    margin: 100px 100px 100px 100px;
-    font-family:Arial, Helvetica, sans-serif;    
+    margin:auto;
+    padding-top:20px;
+    height:100px;
+    /*margin: 100px 100px 100px 100px;
+    font-family:Arial, Helvetica, sans-serif;*/
 }
 
+#searchresults{    
+    position: center;    
+}
 
 
 
