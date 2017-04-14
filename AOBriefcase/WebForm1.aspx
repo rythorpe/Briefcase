@@ -2,7 +2,7 @@
 
 
 <asp:Content ID="stuff_1" ContentPlaceHolderID="head" runat="server">
-    <title>AO contract Search</title>
+    <title>AO Contract Search</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="WebForm1.css" type="text/css"/>
 </asp:Content>
