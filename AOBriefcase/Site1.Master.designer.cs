@@ -40,6 +40,33 @@ namespace AOBriefcase {
         protected global::System.Web.UI.WebControls.Image AOLogo;
         
         /// <summary>
+        /// LoginView1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LoginView LoginView1;
+        
+        /// <summary>
+        /// LoginName2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LoginName LoginName2;
+        
+        /// <summary>
+        /// LoginStatus2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LoginStatus LoginStatus2;
+        
+        /// <summary>
         /// MainContent control.
         /// </summary>
         /// <remarks>

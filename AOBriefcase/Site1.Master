@@ -17,6 +17,20 @@
         <div id="topContent">
             <asp:Image id="AOLogo" runat="server" ImageURL="~/Images/AOlogo.png" />
 
+            <div id="UserInfo">
+                <asp:LoginView ID="LoginView1" runat="server">
+                    <AnonymousTemplate>
+                        Anonymous User
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        Authenticated User
+                    </LoggedInTemplate>
+                </asp:LoginView>
+
+                <asp:LoginName ID="LoginName2" runat="server" Font-Bold="true" />
+                <asp:LoginStatus ID="LoginStatus2" runat="server" />
+            </div>
+
             <div id="NavigationBar">
                 <h2 id="CRD"><span style="color:#79b9ef">C</span>ontract <span style="color:#79b9ef">R</span>eference <span style="color:#79b9ef">D</span>atabase</h2>      
                 <a href="/disclaimer.aspx">Home</a>
