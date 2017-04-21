@@ -3,13 +3,11 @@
 
 <asp:Content ID="stuff_1" ContentPlaceHolderID="head" runat="server">
     <title>Admin Page</title>
-    <link rel="stylesheet" href="viewdetail.css" type="text/css"/>
+    <link rel="stylesheet" href="DBEdit.css" type="text/css"/>
 </asp:Content>
 
 <asp:Content ID="stuff_2" ContentPlaceHolderID="MainContent" runat="server">
-
-    <a href="WebForm1.aspx">Back to search page</a>
-    <br />
+    
     <asp:LoginView ID="LoginView1" runat="server">
         <AnonymousTemplate>
             Your session has not yet been authenticated. Please login to access the contract editors.

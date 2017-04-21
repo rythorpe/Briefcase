@@ -57,7 +57,7 @@ dl dt dd{
                     <asp:MenuItem NavigateUrl="~/disclaimer.aspx" Text="Home " />                    
                     <asp:MenuItem NavigateUrl="~/WebForm1.aspx" Text="Search for a Contract " />                    
                     <asp:MenuItem NavigateUrl="~/DBEdit.aspx" Text="Edit Contracts " />                    
-                    <asp:MenuItem NavigateUrl="~/Contact.aspx" Text="Contact" />
+                    <asp:MenuItem NavigateUrl="~/Contacts.aspx" Text="Contact" />
                 </Items>
             </asp:Menu>
         </div>
@@ -73,10 +73,11 @@ dl dt dd{
                 Orientation="Horizontal" 
                 OnMenuItemClick="subNavi_MenuItemClick"
                 IncludeStyleBlock="true" 
-                ItemWrap="true"                
+                ItemWrap="true"
+                CssClass="submenutestcss"                
                 >
                 <%--<StaticMenuItemStyle CssClass="submenutest" />--%>
-                <StaticSelectedStyle CssClass="submenutest" />
+                <%--<StaticSelectedStyle CssClass="submenutest" />--%>
                 <Items>
                     <asp:MenuItem Text="Contract Details View" Selected="true"/>
                     <asp:MenuItem Selectable="false" Text=" | " />
@@ -194,6 +195,9 @@ dl dt dd{
             FieldHeaderStyle-CssClass="detailfieldheader"
             AlternatingRowStyle-CssClass="alternatingRow"
         >
+<AlternatingRowStyle CssClass="alternatingRow"></AlternatingRowStyle>
+
+<FieldHeaderStyle CssClass="detailfieldheader"></FieldHeaderStyle>
             <Fields>
                 <%--<asp:BoundField DataField="ContractID" HeaderText="ContractID" InsertVisible="False" ReadOnly="True" SortExpression="ContractID"  HeaderStyle-HorizontalAlign="Right" ItemStyle-HorizontalAlign="Center"/>--%>
                 <asp:BoundField DataField="AOID" HeaderText="AOID" SortExpression="AOID"/>
@@ -204,7 +208,7 @@ dl dt dd{
                 <asp:BoundField DataField="Contract_Type" HeaderText="Type" SortExpression="Contract_Type"/>
                 <asp:BoundField DataField="Contract_FC" HeaderText="Financial Class" SortExpression="Contract_FC"/>
                 <asp:BoundField DataField="Contract_Phone" HeaderText="Contact Number" SortExpression="Contract_Phone"/>
-                <asp:BoundField DataField="Contract_Homepage" HeaderText="Homepage" SortExpression="Contract_Homepage"/>
+                <asp:HyperLinkField DataNavigateUrlFields="Contract_Homepage" DataNavigateUrlFormatString="http://{0}" HeaderText="Homepage" Text="Visit Homepage" />
                 <asp:BoundField DataField="Contract_Status" HeaderText="Status" SortExpression="Contract_Status"/>
                 <asp:BoundField DataField="Contract_EffectiveDate" HeaderText="Effective Date" SortExpression="Contract_EffectiveDate" dataformatstring="{0:d}"/>
                 <asp:BoundField DataField="Contract_TerminateDate" HeaderText="Termination Date" SortExpression="Contract_TerminateDate" dataformatstring="{0:d}"/>
@@ -243,8 +247,10 @@ dl dt dd{
                 <asp:BoundField DataField="Auth_Injections" HeaderText="Auth_Injections" SortExpression="Auth_Injections" />
                 <asp:BoundField DataField="Auth_Injections_Note" HeaderText="Auth_Injections_Note" SortExpression="Auth_Injections_Note" />--%>
                 <%--<asp:BoundField DataField="Contract_PDF" HeaderText="Contract_PDF" SortExpression="Contract_PDF" /> --%>
-                <%--<asp:BoundField DataField="GUID" HeaderText="GUID" SortExpression="GUID" /> --%>
+                <%--<asp:BoundField DataField="GUID" HeaderText="GUID" SortExpression="GUID" /> --%>                
             </Fields>
+
+<HeaderStyle CssClass="detailheader"></HeaderStyle>
         </asp:DetailsView>
         <br /><br />
         

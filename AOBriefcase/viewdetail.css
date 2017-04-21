@@ -169,7 +169,7 @@ dl dt dd{
     /*background-color: #353535;*/
     background-color:#383f49;
 }
-#subNavi ul li{    
+#subNavi ul li{        
     position: relative;
     top: 15px;
     border-radius:0px;
@@ -177,16 +177,20 @@ dl dt dd{
     /*width: 240px;*/
     font-family:Arial, Helvetica, sans-serif;
     text-align:center;        
-    padding:15px 12px;
+    /*padding:15px 12px;*/
     margin: 0;
     background-color: #25477d;
-    background-repeat: no-repeat;    
+    background-repeat: no-repeat;     
+    display:table-cell;
+    vertical-align:middle;  
 }
 
 #subNavi ul li a{
     color:white;
     font-weight:bold;
-    vertical-align:central;    
+    height:inherit;
+    display:table-cell;
+    vertical-align:middle;
 }
 
 #subNavi ul li a.highlight:hover{
@@ -196,19 +200,29 @@ dl dt dd{
     cursor: pointer;
 }
 
-#subNavi a.static.selected{
-    color:aqua;
-    background:aqua;
+#subNavi ul li.static.selected{
+    background-color: black;
 }
-/*.submenutest{    
-    color:aqua !important;
-    background-color:aqua !important;
-}*/
+#subNavi a.static.selected{
+    color:#25477d;    
+    background-color:white;
+    height:inherit;
+    border:double;
+}
+.submenutestcss ul li.static.selected{    
+    /*color:white !important;
+    background-color:white !important;*/
+}
+.submenutestcss{
+    display:table-cell;
+    vertical-align:middle;
+}
 
 .viewer{
-    width:100%;
+    width:80%;
     background-color:#fff;
     margin:5px 0 10px 0;
+    margin-left:1in;
     border:solid 1px #525252;
     border-collapse:collapse;
     text-wrap:avoid;
@@ -219,7 +233,7 @@ dl dt dd{
     color:white;
 }
 .viewer .detailfieldheader{
-    width:35%;
+    width:35%;    
 }
 .viewer td{
     padding:10px;
